@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 8477408918995795914}
   - component: {fileID: 7258943891250712593}
   - component: {fileID: 3022053990680580684}
+<<<<<<< HEAD
+=======
   - component: {fileID: 5599817665177022656}
   - component: {fileID: 2384184106682996147}
+>>>>>>> 3999f24f1fe1242547cb9fafa958af65f9f9bbe0
   m_Layer: 0
   m_Name: balloon
   m_TagString: Balloon
@@ -82,6 +85,10 @@ MonoBehaviour:
   rb: {fileID: -6417755403504496094, guid: cacd761b54d052f498f6d434adaf630b, type: 3}
   force: 1
   inflationRate: 0.8
+<<<<<<< HEAD
+  maxBalloonScale: 1
+  height: 5
+=======
   maxBalloonScale: 0.3
   height: 0.8
 --- !u!114 &5599817665177022656
@@ -193,6 +200,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+>>>>>>> 3999f24f1fe1242547cb9fafa958af65f9f9bbe0
 --- !u!1 &627429085708731629
 GameObject:
   m_ObjectHideFlags: 0
