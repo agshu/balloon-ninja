@@ -835,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefab: {fileID: 382808826460535920, guid: ecd1589d0af0a8d42ac8aa4eac113348, type: 3}
+  balloonPrefab: {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
   spawnTime: 3
   maxNumBalloons: 30
 --- !u!64 &508637010
