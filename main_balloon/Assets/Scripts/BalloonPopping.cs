@@ -10,7 +10,6 @@ public class BalloonPopping : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        Console.log(collision.collider.name);
         if (collision.collider.name == "Sword" || collision.collider.name == "target")
         {
             PopBalloon();
