@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 23
+<<<<<<< HEAD
   productGUID: 7e9dfbe120cb543c9bc3e54ef13a5275
+=======
+  productGUID: 4cc6a15bb2bc5604a8b63112f0de24f7
+>>>>>>> 3999f24f1fe1242547cb9fafa958af65f9f9bbe0
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -135,7 +139,12 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
+<<<<<<< HEAD
   preloadedAssets: []
+=======
+  preloadedAssets:
+  - {fileID: 0}
+>>>>>>> 3999f24f1fe1242547cb9fafa958af65f9f9bbe0
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -154,7 +163,12 @@ PlayerSettings:
   resetResolutionOnWindowResize: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
+<<<<<<< HEAD
   applicationIdentifier: {}
+=======
+  applicationIdentifier:
+    Android: com.DefaultCompany.main_balloon
+>>>>>>> 3999f24f1fe1242547cb9fafa958af65f9f9bbe0
   buildNumber:
     Standalone: 0
     iPhone: 0
@@ -717,7 +731,11 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
+<<<<<<< HEAD
   activeInputHandler: 0
+=======
+  activeInputHandler: 2
+>>>>>>> 3999f24f1fe1242547cb9fafa958af65f9f9bbe0
   cloudProjectId: 
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []

@@ -9,8 +9,8 @@ public class BalloonFloatingBehavior : MonoBehaviour
     public Rigidbody rb;
     public float force = 1;
     public float inflationRate = 1.1f;
-    public float maxBalloonScale = 1.0f;
-    public float height = 5;
+    public float maxBalloonScale = 0.3f;
+    public float height = 0.8f;
 
     Vector3 setHeight;
     Vector3 heightVector;
