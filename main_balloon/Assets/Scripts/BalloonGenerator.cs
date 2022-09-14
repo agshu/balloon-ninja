@@ -7,6 +7,8 @@ public class BalloonGenerator : MonoBehaviour
 {
     public GameObject balloonPrefab;
     public float spawnTime = 3f;
+    public int maxNumBalloons = 30;
+    private GameObject[] spawnedBalloons;
 
     void Start()
     {
@@ -16,7 +18,9 @@ public class BalloonGenerator : MonoBehaviour
 
     void BalloonSpawn()
     {
-        if (balloonPrefab != null)
+        spawnedBalloons = GameObject.FindGameObjectsWithTag("Balloon");
+        
+        if (balloonPrefab != null && spawnedBalloons.Length+1 <= maxNumBalloons)
         {
             Vector3 randomPos = GetARandomTreePos();
             GameObject balloon = Instantiate(balloonPrefab, randomPos, balloonPrefab.transform.rotation);
