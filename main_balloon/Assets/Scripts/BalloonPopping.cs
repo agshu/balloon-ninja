@@ -19,7 +19,10 @@ public class BalloonPopping : MonoBehaviour
 
     private void PopBalloon()
     {
+        Debug.Log("ballong position" + gameObject.transform.position);
         GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
+        Debug.Log("confetti position" + confettiExplosion.transform.position);
+
         Destroy(confettiExplosion, 1f);
             
         Destroy(gameObject);
