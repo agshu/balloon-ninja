@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8477408918995795914}
   - component: {fileID: 7258943891250712593}
   - component: {fileID: 3022053990680580684}
-  - component: {fileID: 5599817665177022656}
   m_Layer: 0
   m_Name: balloon
   m_TagString: Untagged
@@ -82,19 +81,6 @@ MonoBehaviour:
   inflationRate: 0.8
   maxBalloonScale: 1
   height: 5
---- !u!114 &5599817665177022656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 382808826460535920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bae76c58ee015a46a5d65792536b155, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  confettiExplosionPrefab: {fileID: 1571038619711072835, guid: 7369a3b7a6abd364d86cd9bab756f074, type: 3}
 --- !u!1 &627429085708731629
 GameObject:
   m_ObjectHideFlags: 0
