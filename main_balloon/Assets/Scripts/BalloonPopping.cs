@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,8 @@ public class BalloonPopping : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "target")
+        Console.log(collision.collider.name);
+        if (collision.collider.name == "Sword" || collision.collider.name == "target")
         {
             PopBalloon();
         }
