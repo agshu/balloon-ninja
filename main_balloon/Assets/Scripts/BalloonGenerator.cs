@@ -19,7 +19,7 @@ public class BalloonGenerator : MonoBehaviour
         if (balloonPrefab != null)
         {
             Vector3 randomPos = GetARandomTreePos();
-            GameObject balloon = Instantiate(balloonPrefab, randomPos, Quaternion.identity);
+            GameObject balloon = Instantiate(balloonPrefab, randomPos, balloonPrefab.transform.rotation);
             //GameObject balloon = Instantiate(balloonPrefab);
             balloon.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
