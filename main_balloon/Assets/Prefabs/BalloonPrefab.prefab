@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -1066579951292746438}
   m_Layer: 0
   m_Name: BalloonPrefab
-  m_TagString: Untagged
+  m_TagString: Balloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,7 +158,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 674a7d2519a8e4147a89a7d2ede06c46, type: 3}
+  m_audioClip: {fileID: 8300000, guid: ee0b54bf4387e5b4dbd00ac421ce9870, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
