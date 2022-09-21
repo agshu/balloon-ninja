@@ -13,7 +13,7 @@ public class PSPlaneIntersection : MonoBehaviour
 
     void Start()
     {
-        PSystem = GetComponent<ParticleSystem>();
+        //PSystem = ParticleSystem.GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
         //CollisionEvents = new ParticleCollisionEvent[8];
     }

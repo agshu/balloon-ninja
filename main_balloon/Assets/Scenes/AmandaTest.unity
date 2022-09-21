@@ -855,6 +855,7 @@ GameObject:
   - component: {fileID: 508637012}
   - component: {fileID: 508637011}
   - component: {fileID: 508637010}
+  - component: {fileID: 508637015}
   - component: {fileID: 508637009}
   - component: {fileID: 508637014}
   m_Layer: 3
@@ -913,7 +914,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9d35f2fab28e844e7b659f73f23d5ede, type: 2}
+  - {fileID: 2100000, guid: 798526da50c694308ac4f2ede4e2ec6a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -970,6 +971,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ae2ca0373285842a31986f36b6e865, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &508637015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508637008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  part: {fileID: 4884091865876398054, guid: ee62467a1ec3ebe4e8e164d487cfdfe0, type: 3}
+  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
 --- !u!1 &600278352
 GameObject:
   m_ObjectHideFlags: 0
