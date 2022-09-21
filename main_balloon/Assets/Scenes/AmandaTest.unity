@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.9956053, g: 0.9956053, b: 0.9956053, a: 1}
+  m_IndirectSpecularColor: {r: 0.99003184, g: 0.99003184, b: 0.99003184, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -346,6 +346,7 @@ GameObject:
   - component: {fileID: 250847547}
   - component: {fileID: 250847546}
   - component: {fileID: 250847545}
+  - component: {fileID: 250847549}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -843,6 +844,19 @@ MonoBehaviour:
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
+--- !u!114 &250847549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250847543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab57abde92a2f247b067d186f35119b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 0}
 --- !u!1 &508637008
 GameObject:
   m_ObjectHideFlags: 0
