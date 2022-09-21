@@ -17,6 +17,7 @@ public class BalloonFloatingBehavior : MonoBehaviour
 
     void Start()
     {
+        
         rb = gameObject.GetComponent<Rigidbody>();
         setHeight = new Vector3(0, height, 0);
         heightVector = transform.position + setHeight;
