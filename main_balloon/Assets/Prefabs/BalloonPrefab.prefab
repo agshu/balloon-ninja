@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bae76c58ee015a46a5d65792536b155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confettiExplosionPrefab: {fileID: 1571038619711072835, guid: 7369a3b7a6abd364d86cd9bab756f074, type: 3}
+  confettiExplosionPrefab: {fileID: 1571038619711072835, guid: ee62467a1ec3ebe4e8e164d487cfdfe0, type: 3}
   PopAudioSource: {fileID: -1066579951292746438}
   balloonRenderer: {fileID: 0}
 --- !u!82 &-1066579951292746438
