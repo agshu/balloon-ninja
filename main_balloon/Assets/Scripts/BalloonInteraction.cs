@@ -42,9 +42,12 @@ public class BalloonInteraction : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.name == "Sword") 
+        Debug.Log(other.gameObject.name);
+        if (other.gameObject.name == "Blade") 
         {
+            Debug.Log("pop");
             PopBalloon();
+
         }
         if (other.gameObject.name == "Glove") 
         {
