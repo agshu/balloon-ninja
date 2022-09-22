@@ -856,7 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ab57abde92a2f247b067d186f35119b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 0}
 --- !u!1 &508637008
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +890,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefab: {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+  balloonPrefabs:
+  - {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+  - {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
   spawnTime: 3
   maxNumBalloons: 30
 --- !u!64 &508637010
@@ -999,6 +1000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   part: {fileID: 4884091865876398054, guid: ee62467a1ec3ebe4e8e164d487cfdfe0, type: 3}
   confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
+  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
 --- !u!1 &600278352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1032,7 @@ Transform:
   - {fileID: 1047519909}
   - {fileID: 250847544}
   - {fileID: 1595794996}
+  - {fileID: 1614711585}
   m_Father: {fileID: 2105899607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1045,6 +1048,7 @@ GameObject:
   - component: {fileID: 1047519912}
   - component: {fileID: 1047519911}
   - component: {fileID: 1047519910}
+  - component: {fileID: 1047519913}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1191,6 +1195,39 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1047519913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1047519908}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &1595794995
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1738,61 @@ MonoBehaviour:
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
+--- !u!1 &1614711584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1614711585}
+  - component: {fileID: 1614711587}
+  - component: {fileID: 1614711586}
+  m_Layer: 0
+  m_Name: Body
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1614711585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614711584}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 600278353}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1614711586
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614711584}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5000001
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+--- !u!33 &1614711587
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614711584}
+  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1691483945
 GameObject:
   m_ObjectHideFlags: 0

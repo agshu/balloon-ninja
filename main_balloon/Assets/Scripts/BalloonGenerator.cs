@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BalloonGenerator : MonoBehaviour
 {
-    public GameObject balloonPrefab;
+    public GameObject[] balloonPrefabs;
     public float spawnTime = 3f;
     public int maxNumBalloons = 30;
     private GameObject[] spawnedBalloons;
@@ -18,6 +18,7 @@ public class BalloonGenerator : MonoBehaviour
 
     void BalloonSpawn()
     {
+        GameObject balloonPrefab = balloonPrefabs[UnityEngine.Random.Range(0, balloonPrefabs.Length)]; 
         spawnedBalloons = GameObject.FindGameObjectsWithTag("Balloon");
         
         if (balloonPrefab != null && spawnedBalloons.Length+1 <= maxNumBalloons)
