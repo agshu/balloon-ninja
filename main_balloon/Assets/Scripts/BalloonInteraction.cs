@@ -45,11 +45,9 @@ public class BalloonInteraction : MonoBehaviour
         Debug.Log(other.gameObject.name);
         if (other.gameObject.name == "Blade") 
         {
-            Debug.Log("pop");
             PopBalloon();
-
         }
-        if (other.gameObject.name == "Glove") 
+        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
         {
             Vector3 bPos = transform.position; 
             Vector3 gwPos = other.ClosestPoint(bPos); //closest point from the glove
@@ -72,6 +70,7 @@ public class BalloonInteraction : MonoBehaviour
     {
         setHeight = new Vector3(newDir.x, 0, 0);
         heightVector = transform.position + setHeight;
-        rb.AddForce(newDir*50f);
+        rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
     }
+
 }
