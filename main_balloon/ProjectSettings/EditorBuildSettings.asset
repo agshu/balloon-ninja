@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/AmandaTest.unity
     guid: f86a3c6db61865440bad88e68ba9f8ea
+  - enabled: 1
+    path: Assets/Scenes/StartScene.unity
+    guid: 9a9db18c406119e4e966b0487b8ddabb
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 7aa8b9e639c589a4881a2f5be40cee20, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ae6b0c0d66d23f54a8594721b79b870b, type: 2}

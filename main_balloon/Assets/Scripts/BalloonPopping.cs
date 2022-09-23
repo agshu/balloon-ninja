@@ -8,6 +8,7 @@ public class BalloonPopping : MonoBehaviour
 {
 
     public GameObject confettiExplosionPrefab;
+    public AudioSource PopAudioSource;
 
     public Renderer balloonRenderer;
 
@@ -21,6 +22,7 @@ public class BalloonPopping : MonoBehaviour
     {
         if (collision.collider.name == "Sword" || collision.collider.name == "target")
         {
+            PopAudioSource.Play();
             PopBalloon();
         }
 
@@ -28,12 +30,10 @@ public class BalloonPopping : MonoBehaviour
 
     private void PopBalloon()
     {
-        AudioSource balloonPopAudio = GetComponent<AudioSource>();
-        balloonPopAudio.Play();
         GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
         Destroy(confettiExplosion, 1f);
         balloonRenderer.enabled = false;
 
-        Destroy(gameObject, balloonPopAudio.clip.length);
+        Destroy(gameObject, PopAudioSource.clip.length);
     }
 }
