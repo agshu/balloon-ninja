@@ -262,6 +262,7 @@ GameObject:
   - component: {fileID: 815523054}
   - component: {fileID: 815523053}
   - component: {fileID: 815523057}
+  - component: {fileID: 815523058}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -361,6 +362,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 2.220446e-16, z: 10}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &815523058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815523052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balloonPrefab: {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+  spawnTime: 3
+  maxNumBalloons: 30
 --- !u!1 &1470158570
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,15 +572,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899085646124508750, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.18
       objectReference: {fileID: 0}
     - target: {fileID: 4899085646124508750, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.04
+      value: 7.42
       objectReference: {fileID: 0}
     - target: {fileID: 4899085646124508750, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.44
+      value: -2.49
       objectReference: {fileID: 0}
     - target: {fileID: 4899085646124508750, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
       propertyPath: m_LocalRotation.w

@@ -11,6 +11,7 @@ public class BalloonInteraction : MonoBehaviour
     public float inflationRate = 1.1f;
     public float maxBalloonScale = 0.3f;
     public float height = 0.8f;
+    public float DestroyTime = 1f;
     public GameObject confettiExplosionPrefab;
     public Renderer balloonRenderer;
 
@@ -61,7 +62,7 @@ public class BalloonInteraction : MonoBehaviour
         AudioSource balloonPopAudio = GetComponent<AudioSource>();
         balloonPopAudio.Play();
         GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
-        Destroy(confettiExplosion, 1f);
+        Destroy(confettiExplosion, DestroyTime);
         balloonRenderer.enabled = false;
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
