@@ -113,12 +113,12 @@ Material:
     - _QueueControl: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 1
+    - _Smoothness: 20
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _VertexDisplacement: 0.05
+    - _VertexDisplacement: 0.001
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
