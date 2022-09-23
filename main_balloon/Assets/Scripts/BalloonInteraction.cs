@@ -1,4 +1,4 @@
-using System;
+//using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +18,12 @@ public class BalloonInteraction : MonoBehaviour
     Vector3 setHeight;
     Vector3 heightVector;
     Vector3 dirVec;
+
+    public float cubeSize = 0.2f;
+    public int cubesInRow = 5;
+
+    float cubesPivotDistance;
+    Vector3 cubesPivot;
 
     void Start()
     {
@@ -44,16 +50,31 @@ public class BalloonInteraction : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log(other.gameObject.name);
+        Vector3 bPos = transform.position; 
+        Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
+        Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest sword point
+
         if (other.gameObject.name == "Blade") 
         {
-            PopBalloon();
+            if (gameObject.name == "BalloonPrefab(Clone)")
+            {
+                Debug.Log(gameObject.name);
+                PopBalloon();
+            }
+            if (gameObject.name == "BalloonPrefabPaint(Clone)")
+            {
+                Debug.Log(gameObject.name);
+                PopBalloon();
+            }
+            if (gameObject.name == "BallExplosion(Clone)")
+            {
+                explode(forceDir);
+            }
+
         }
         if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
         {
-            Vector3 bPos = transform.position; 
-            Vector3 gwPos = other.ClosestPoint(bPos); //closest point from the glove
-            Vector3 GloveDir = (bPos - gwPos).normalized; //normalized vector between balloon and closest sword point
-            MoveBalloon(GloveDir);
+            MoveBalloon(forceDir);
         }
     }
 
@@ -67,11 +88,50 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
-     private void MoveBalloon(Vector3 newDir)
+    private void MoveBalloon(Vector3 newDir)
     {
         setHeight = new Vector3(newDir.x, 0, 0);
         heightVector = transform.position + setHeight;
         rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
     }
+
+    public void explode(Vector3 SwordDir) 
+    {
+        //calculate pivot distance
+        cubesPivotDistance = cubeSize * cubesInRow / 2;
+        //use this value to create pivot vector
+        cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
+
+        //make object disappear
+        gameObject.SetActive(false);
+
+        //loop 3 times to create 5x5x5 pieces in x,y,z coordinates
+        for (int x = 0; x < cubesInRow; x++) {
+            for (int y = 0; y < cubesInRow; y++) {
+                for (int z = 0; z < cubesInRow; z++) {
+                    createPiece(x, y, z, SwordDir);
+                }
+            }
+        }
+    }
+
+    void createPiece(int x, int y, int z, Vector3 SwordDir) {
+        //create piece
+        GameObject piece;
+        
+        piece = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+
+        //set piece position and scale
+        piece.transform.position = transform.position + new Vector3(cubeSize * x, cubeSize * y, cubeSize * z) - cubesPivot;
+        piece.transform.localScale = new Vector3(cubeSize, cubeSize, cubeSize);
+
+        //add rigidbody, set mass and add force in direction of sword hit
+        Rigidbody body = piece.AddComponent<Rigidbody>();
+        body.mass = cubeSize;
+        body.AddForce(SwordDir*50f+ Random.onUnitSphere * 25.0f);
+
+    }
+
+
 
 }

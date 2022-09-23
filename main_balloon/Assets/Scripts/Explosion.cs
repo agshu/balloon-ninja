@@ -6,6 +6,7 @@ public class Explosion : MonoBehaviour
 {
     public float cubeSize = 0.2f;
     public int cubesInRow = 5;
+    public Vector3 swordDir;
 
     float cubesPivotDistance;
     Vector3 cubesPivot;
@@ -29,7 +30,7 @@ public class Explosion : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.gameObject.name == "Sword") {
+        if (other.gameObject.name == "Blade") {
 
             // postion and rotation information from the ballon, specifically the midpoint of the balloon
 

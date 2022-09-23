@@ -9,7 +9,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
       propertyPath: m_Name
-      value: BallsBalloonPrefab
+      value: ballsExplosion Variant
       objectReference: {fileID: 0}
     - target: {fileID: 2331691586072288804, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
       propertyPath: m_RootOrder
@@ -55,6 +55,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3514457308377101940, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3c5c4536c2b7a2b4d870da8a1b894f11, type: 2}
+    - target: {fileID: 7563577793787895955, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+      propertyPath: confettiExplosionPrefab
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
 --- !u!1 &7365528425887067772 stripped
@@ -62,20 +70,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
   m_PrefabInstance: {fileID: 8849275240986872794}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1030370674
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7365528425887067772}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1030370673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,4 +84,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cubeSize: 0.2
   cubesInRow: 5
+  swordDir: {x: 0, y: 0, z: 0}
   balloon: {fileID: 2931677937514456357, guid: 7926f278f40dd4611bf080eac106ac88, type: 3}

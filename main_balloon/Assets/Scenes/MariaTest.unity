@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 71611374}
   - component: {fileID: 71611373}
+  - component: {fileID: 71611375}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -217,6 +218,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &71611375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 71611372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &350716378
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefab: {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+  balloonPrefabs: []
   spawnTime: 3
   maxNumBalloons: 30
 --- !u!1 &1470158570
@@ -619,6 +640,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1030370673, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1030370674, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313301889381313353, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313301889381313353, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+      propertyPath: confettiExplosionPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6527164840077006334, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -667,5 +704,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BallsBalloonPrefab
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
