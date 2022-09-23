@@ -1,3 +1,4 @@
+
 //using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,8 @@ public class BalloonInteraction : MonoBehaviour
     public float DestroyTime = 1f;
     public GameObject confettiExplosionPrefab;
     public Renderer balloonRenderer;
+    private AudioSource balloonPopAudio;
+    public GameObject balls;
 
     Vector3 setHeight;
     Vector3 heightVector;
@@ -56,6 +59,8 @@ public class BalloonInteraction : MonoBehaviour
 
         if (other.gameObject.name == "Blade") 
         {
+            balloonPopAudio = GetComponent<AudioSource>();
+            balloonPopAudio.Play();
             if (gameObject.name == "BalloonPrefab(Clone)")
             {
                 Debug.Log(gameObject.name);
@@ -66,7 +71,7 @@ public class BalloonInteraction : MonoBehaviour
                 Debug.Log(gameObject.name);
                 PopBalloon();
             }
-            if (gameObject.name == "BallExplosion(Clone)")
+            if (gameObject.name == "ballExplosion(Clone)")
             {
                 explode(forceDir);
             }
@@ -80,8 +85,6 @@ public class BalloonInteraction : MonoBehaviour
 
     private void PopBalloon()
     {
-        AudioSource balloonPopAudio = GetComponent<AudioSource>();
-        balloonPopAudio.Play();
         GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
         Destroy(confettiExplosion, DestroyTime);
         balloonRenderer.enabled = false;
@@ -103,7 +106,7 @@ public class BalloonInteraction : MonoBehaviour
         cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
 
         //make object disappear
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
 
         //loop 3 times to create 5x5x5 pieces in x,y,z coordinates
         for (int x = 0; x < cubesInRow; x++) {
@@ -113,13 +116,16 @@ public class BalloonInteraction : MonoBehaviour
                 }
             }
         }
+        balloonRenderer.enabled = false;
+        Debug.Log("HEST");
+        Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
     void createPiece(int x, int y, int z, Vector3 SwordDir) {
         //create piece
         GameObject piece;
         
-        piece = Instantiate(gameObject, new Vector3(0, 0, 0), Quaternion.identity);
+        piece = Instantiate(balls, new Vector3(0, 0, 0), Quaternion.identity);
 
         //set piece position and scale
         piece.transform.position = transform.position + new Vector3(cubeSize * x, cubeSize * y, cubeSize * z) - cubesPivot;

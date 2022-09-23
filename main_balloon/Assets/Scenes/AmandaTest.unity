@@ -842,6 +842,7 @@ MonoBehaviour:
   balloonPrefabs:
   - {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
   - {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
+  - {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
   spawnTime: 3
   maxNumBalloons: 30
 --- !u!64 &508637010
