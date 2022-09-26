@@ -136,6 +136,9 @@ MonoBehaviour:
   DestroyTime: 2
   confettiExplosionPrefab: {fileID: 556311716312795956, guid: c042a36cb9ca04748803e503b718d79c, type: 3}
   balloonRenderer: {fileID: 0}
+  balls: {fileID: 0}
+  cubeSize: 0.2
+  cubesInRow: 5
 --- !u!82 &-1066579951292746438
 AudioSource:
   m_ObjectHideFlags: 0
@@ -146,7 +149,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ee0b54bf4387e5b4dbd00ac421ce9870, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 837eb8d5a78554d2db9071894126546c, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
