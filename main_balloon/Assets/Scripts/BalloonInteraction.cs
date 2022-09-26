@@ -75,6 +75,10 @@ public class BalloonInteraction : MonoBehaviour
             {
                 explode(forceDir);
             }
+            if (gameObject.name == "BalloonPrefabWater(Clone)")
+            {
+                PopBalloon();
+            }
 
         }
         if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
