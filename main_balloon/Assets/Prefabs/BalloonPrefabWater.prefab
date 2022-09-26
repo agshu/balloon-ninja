@@ -132,9 +132,9 @@ MonoBehaviour:
   force: 1
   inflationRate: 1.1
   maxBalloonScale: 0.3
-  height: 0.8
-  DestroyTime: 1
-  confettiExplosionPrefab: {fileID: 6232790782459640814, guid: ab73ceab4b9bad94c862067141952691, type: 3}
+  height: 1
+  DestroyTime: 2
+  confettiExplosionPrefab: {fileID: 6637779210144727107, guid: 9c448faeb204647a48b6515aed4bd41c, type: 3}
   balloonRenderer: {fileID: 0}
   balls: {fileID: 0}
   cubeSize: 0.2
