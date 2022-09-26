@@ -1,53 +1,35 @@
-const http = require('http'); 
-const CONSTANTS = require('./utils/constants.js');
-const fs = require('fs');
-const path = require('path');
-const WebSocket = require('ws');
+const express = require('express');
+//const http = require('http');
 
-const { PORT, CLIENT } = CONSTANTS;
+const logger = require("morgan") //logging events upon connection
+const path = require("path");
+const websockets = require("./websockets.js"); //everything connected to websockets
 
+//all config parameters
 
-// Create the HTTP server
-const server = http.createServer((req, res) => {
-  const filePath = ( req.url === '/' ) ? '/public/index.html' : req.url;
+const CONFIG = require('../config.json');
+const port = process.env.PORT || parseInt(CONFIG.PortServer);
+const localIP = CONFIG.LocalIP;
+const host = CONFIG.HostIP;
+const portWs = CONFIG.PortWs;
 
-  // determine the contentType by the file extension
-  const extname = path.extname(filePath);
-  let contentType = 'text/html';
-  if (extname === '.js') contentType = 'text/javascript';
-  else if (extname === '.css') contentType = 'text/css';
+//create the server with express
+const app = new express;
+//const server = http.createServer(app);
 
-  res.writeHead(200, { 'Content-Type': contentType });
-  fs.createReadStream(`${__dirname}/${filePath}`, 'utf8').pipe(res);
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.use(logger("short"))
+app.get('/', (req, res) => {
+    res.render(path.join(__dirname,  '..',  'app',  'index.html'), {host:host, port:portWs});
 });
+app.use(express.static(path.join(__dirname, '..', 'app'))); // This sends all static files in app upon request
 
+websockets.Start(port)
 
+//start the server listening on local IP
 
-// creating the WebSocket Server using the HTTP server with ws framework
-const wsServer = new WebSocket.Server({server});
-
-// responding to connection events 
-wsServer.on('connection', (socket) => {
-  // passing on the message to broadcast function
-  socket.on('message', (data) => {
-    broadcast(data, socket)
-  })
-  // logging when new client is connected 
-  console.log('New client connected!');
-});
-
-
-function broadcast(data, socketToOmit) {
-  //implement the broadcast pattern. Exclude the emitting socket. Data is message. 
-    wsServer.clients.forEach(connectedClient => {
-      if(connectedClient.readyState === WebSocket.OPEN && connectedClient != socketToOmit) {
-        connectedClient.send(data)
-      }
-    })
-
-}
-
-//start the server listening on localhost:8080
-server.listen(PORT, () => {
-  console.log(`Listening on: http://localhost:${server.address().port}`);
+server.listen(port, () => {
+    console.log('listening on http://' + localIP + ':' + port);
+    console.log('Go to http://' + host + ':' + port);
 });
