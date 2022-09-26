@@ -280,6 +280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
   paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+  water: {fileID: 0}
 --- !u!1 &209421950
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,6 +1032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
   paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+  water: {fileID: 0}
 --- !u!1 &508637008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
   paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+  water: {fileID: 5830712910284271252, guid: 3776928ff93d34d4f9f77dee127ea0ca, type: 3}
 --- !u!1 &600278352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,6 +2353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
   paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+  water: {fileID: 0}
 --- !u!1 &2055224193
 GameObject:
   m_ObjectHideFlags: 0
@@ -2463,6 +2467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
   paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+  water: {fileID: 0}
 --- !u!1 &2105899604
 GameObject:
   m_ObjectHideFlags: 0
