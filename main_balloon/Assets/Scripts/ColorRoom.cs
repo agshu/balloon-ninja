@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class ColorRoom : MonoBehaviour
@@ -33,6 +34,7 @@ public class ColorRoom : MonoBehaviour
             while (i < numCollisionEvents)
             {
                 Vector3 pos = collisionEvents[i].intersection;
+                CheckNearbyObjects(pos, paint.GetComponent<SpriteRenderer>().bounds.size.x);
                 GameObject paintSplat = Instantiate(paint, pos, paintRotation);
                 i++;
             }
@@ -43,6 +45,7 @@ public class ColorRoom : MonoBehaviour
                 Vector3 pos = collisionEvents[i].intersection;
                 // Get random color from array of colors and set material to it
                 int rnd = UnityEngine.Random.Range(0, colors.Length);
+                CheckNearbyObjects(pos, confetti.GetComponent<MeshRenderer>().bounds.size.x);
                 GameObject confettiSquare = Instantiate(confetti, new Vector3(pos[0], 0.0001f, pos[2]), Quaternion.identity);
                 var confettiRenderer = confettiSquare.GetComponent<Renderer>();
                 confettiRenderer.material.color = colors[rnd];
@@ -54,9 +57,24 @@ public class ColorRoom : MonoBehaviour
             {
                 Vector3 pos = collisionEvents[i].intersection;
                 // Get random color from array of colors and set material to it
+                CheckNearbyObjects(pos, water.GetComponent<SpriteRenderer>().bounds.size.x);
                 GameObject waterSplat = Instantiate(water, new Vector3(pos[0], 0.0001f, pos[2]), water.transform.rotation);
                 i++;
             }
+    }
+
+    void CheckNearbyObjects(Vector3 point, float objectSize)
+    {
+        GameObject[] balloonResidues = GameObject.FindGameObjectsWithTag("BalloonResidue");
+
+        foreach (var balloonResidue in balloonResidues)
+        {
+            var dist = Vector3.Distance(balloonResidue.transform.position, point);
+            if (dist < (objectSize/2))
+            {
+                Destroy(balloonResidue);
+            }
+        }
     }
 
 
