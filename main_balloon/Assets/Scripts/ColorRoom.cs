@@ -12,11 +12,13 @@ public class ColorRoom : MonoBehaviour
 
     private ParticleSystem part;
     private Color[] colors = { new Color(1, 0, 0.8416281f, 1), new Color(1, 0.9679406f, 0, 1), new Color(0.1362005f, 1, 0, 1), new Color(0, 1, 0.9706755f, 1), new Color(0.6878676f, 0, 1, 1), new Color(1, 0.3245357f, 0, 1) };
+    private Quaternion paintRotation;
 
     // Start is called before the first frame update
     void Start()
     {
         collisionEvents = new List<ParticleCollisionEvent>();
+        paintRotation = Quaternion.Euler(transform.localRotation.eulerAngles + paint.transform.localRotation.eulerAngles);
     }
 
     void OnParticleCollision(GameObject other)
@@ -24,16 +26,14 @@ public class ColorRoom : MonoBehaviour
         part = other.GetComponent<ParticleSystem>();
         int numCollisionEvents = part.GetCollisionEvents(gameObject, collisionEvents);
         int i = 0;
-        UnityEngine.Debug.Log(other.name);
+
 
         if (other.name == "PaintSplatterSpheres")
         {
             while (i < numCollisionEvents)
             {
                 Vector3 pos = collisionEvents[i].intersection;
-                // Get random color from array of colors and set material to it
-                int rnd = UnityEngine.Random.Range(0, colors.Length);
-                GameObject paintSplat = Instantiate(paint, new Vector3(pos[0], 0.01f, pos[2]), paint.transform.rotation);
+                GameObject paintSplat = Instantiate(paint, pos, paintRotation);
                 i++;
             }
         } else if(other.name == "ConfettiExplosion 1(Clone)")
@@ -43,7 +43,7 @@ public class ColorRoom : MonoBehaviour
                 Vector3 pos = collisionEvents[i].intersection;
                 // Get random color from array of colors and set material to it
                 int rnd = UnityEngine.Random.Range(0, colors.Length);
-                GameObject confettiSquare = Instantiate(confetti, new Vector3(pos[0], 0.01f, pos[2]), Quaternion.identity);
+                GameObject confettiSquare = Instantiate(confetti, new Vector3(pos[0], 0.0001f, pos[2]), Quaternion.identity);
                 var confettiRenderer = confettiSquare.GetComponent<Renderer>();
                 confettiRenderer.material.color = colors[rnd];
                 i++;
@@ -54,8 +54,7 @@ public class ColorRoom : MonoBehaviour
             {
                 Vector3 pos = collisionEvents[i].intersection;
                 // Get random color from array of colors and set material to it
-                int rnd = UnityEngine.Random.Range(0, colors.Length);
-                GameObject waterSplat = Instantiate(water, new Vector3(pos[0], 0.01f, pos[2]), water.transform.rotation);
+                GameObject waterSplat = Instantiate(water, new Vector3(pos[0], 0.0001f, pos[2]), water.transform.rotation);
                 i++;
             }
     }
