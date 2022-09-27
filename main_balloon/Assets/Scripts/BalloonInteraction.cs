@@ -22,8 +22,8 @@ public class BalloonInteraction : MonoBehaviour
     Vector3 heightVector;
     Vector3 dirVec;
 
-    public float cubeSize = 0.2f;
-    public int cubesInRow = 5;
+    private float cubeSize = 0.1f;
+    private int cubesInRow = 2;
 
     float cubesPivotDistance;
     Vector3 cubesPivot;
@@ -61,6 +61,7 @@ public class BalloonInteraction : MonoBehaviour
         {
             balloonPopAudio = GetComponent<AudioSource>();
             balloonPopAudio.Play();
+
             if (gameObject.name == "BalloonPrefab(Clone)")
             {
                 Debug.Log(gameObject.name);
