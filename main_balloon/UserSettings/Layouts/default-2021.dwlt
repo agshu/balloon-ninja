@@ -486,7 +486,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 0
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
@@ -530,7 +530,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     yGrid:
       m_Fade:
         m_Target: 1
@@ -546,7 +546,7 @@ MonoBehaviour:
         m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
-      m_Size: {x: 0, y: 0}
+      m_Size: {x: 1, y: 1}
     m_ShowGrid: 1
     m_GridAxis: 1
     m_gridOpacity: 0.5
@@ -559,9 +559,9 @@ MonoBehaviour:
     speed: 2
     m_Value: 2.342929
   m_Ortho:
-    m_Target: 0
+    m_Target: 1
     speed: 2
-    m_Value: 0
+    m_Value: 1
   m_CameraSettings:
     m_Speed: 1.005
     m_SpeedNormalized: 0.5
@@ -613,7 +613,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 962b0000
       m_LastClickedID: 0
       m_ExpandedIDs: 885ffbff4660fbffda66fbff1667fbff7c7afbff3e7bfbffd281fbff0e82fbff2a8efbffe88efbff7e95fbffba95fbff4ca3fbff0aa4fbffa0aafbffdcaafbffa4bcfbff62bdfbffdcc3fbfffcc3fbff70cffbff2cd0fbffc2d6fbfffed6fbff72e7fbff34e8fbffcaeefbff06effbff300bfcffc80bfcff9215fcff9c15fcff1e1ffcffd81ffcff5226fcff7426fcffe22cfcff885bfcff425cfcffbc62fcffdc62fcffd271fcff8c72fcff0a79fcff2e79fcff509efcff0c9ffcff82a5fcffa2a5fcff222ffdff282ffdff0c31fdff1435fdff3035fdff3a35fdff3c35fdffbaeafdffaeecfdff7a24feff8424feffb826feff423afeff483afeff70a9ffff2aaaffff68aaffff88aaffffd8bfffff98c0ffffd6c0fffff6c0ffff2adbffffeedbffff68e2ffff88e2ffff2efbffff48710000607100008c710000ae860000d8860000f8860000188d00005c8d0000c290000006910000aab4000052b900006cb9000088b9000090b90000a6b90000b2b90000e0b9000008ba000026ba000052ba0000
       m_RenameOverlay:

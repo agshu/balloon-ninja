@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1066579951292746438, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bdd2130caefa946e28a370ad1eec6638, type: 3}
     - target: {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
       propertyPath: m_Name
       value: ballExplosion

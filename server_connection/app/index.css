@@ -1,0 +1,55 @@
+body {
+    background-color: pink;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0rem;
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+
+.logo {
+    width: 60%;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding: 1rem 3rem 3rem 1rem;
+    background-color: palevioletred;
+    border-radius: 25px;
+}
+
+.container-mini {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin-top: 2rem;
+    background-color: white;
+    width: 30%;
+    border-radius: 25px;
+}
+
+.balloon {
+    align-self: center;
+    width: 90%;
+    border-radius: 25px;
+}
+
+.btn-balloon {
+    width: 50%;
+    height: 2rem;
+    align-self: center;
+    background: none;
+    background-color: black;
+    color: white;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-bottom: 2rem;
+}
+
