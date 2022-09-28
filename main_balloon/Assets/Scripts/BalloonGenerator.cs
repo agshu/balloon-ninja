@@ -24,7 +24,7 @@ public class BalloonGenerator : MonoBehaviour
         if (balloonPrefab != null && spawnedBalloons.Length+1 <= maxNumBalloons)
         {
             Vector3 randomPos = GetARandomTreePos();
-            GameObject balloon = Instantiate(balloonPrefab, randomPos, balloonPrefab.transform.rotation);
+            GameObject balloon = Instantiate(balloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), balloonPrefab.transform.rotation);
             //GameObject balloon = Instantiate(balloonPrefab);
             balloon.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
