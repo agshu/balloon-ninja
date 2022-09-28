@@ -36,14 +36,14 @@ public class ColorRoom : MonoBehaviour
             {
                 Vector3 pos = collisionEvents[i].intersection;
 
-                GameObject paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint);
+                GameObject paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint, pos, transform.localRotation.eulerAngles);
                 CheckNearbyObjects(pos, paint.GetComponent<SpriteRenderer>().bounds.size.x);
 
                 if (paint != null)
                 {
                     Debug.Log("Paint rot");
-                    paint.transform.position = pos;
-                    paint.transform.rotation = Quaternion.Euler(transform.localRotation.eulerAngles + paint.transform.localRotation.eulerAngles);
+                    // paint.transform.position = pos;
+                    // paint.transform.rotation = Quaternion.Euler(transform.localRotation.eulerAngles + paint.transform.localRotation.eulerAngles);
                     paint.SetActive(true);
                 }
 
@@ -57,7 +57,7 @@ public class ColorRoom : MonoBehaviour
             {
                 Vector3 pos = collisionEvents[i].intersection;
 
-                GameObject confetti = PoolManager.Instance.GetPoolObject(PoolObjectType.Confetti);
+                GameObject confetti = PoolManager.Instance.GetPoolObject(PoolObjectType.Confetti, new Vector3(pos[0], 0.0001f, pos[2]), new Vector3(0, 0, 0));
 
                 // Get random color from array of colors and set material to it
                 int rnd = UnityEngine.Random.Range(0, colors.Length);
@@ -68,7 +68,7 @@ public class ColorRoom : MonoBehaviour
 
                 if (confetti != null)
                 {
-                    confetti.transform.position = new Vector3(pos[0], 0.0001f, pos[2]);
+                    //confetti.transform.position = new Vector3(pos[0], 0.0001f, pos[2]);
                     confetti.SetActive(true);
                 }
                 // GameObject confettiSquare = Instantiate(confetti, new Vector3(pos[0], 0.0001f, pos[2]), Quaternion.identity);
@@ -82,12 +82,12 @@ public class ColorRoom : MonoBehaviour
             {
                 Vector3 pos = collisionEvents[i].intersection;
 
-                GameObject water = PoolManager.Instance.GetPoolObject(PoolObjectType.Water);
+                GameObject water = PoolManager.Instance.GetPoolObject(PoolObjectType.Water, new Vector3(pos[0], 0.0001f, pos[2]), new Vector3 (0,0,0));
                 CheckNearbyObjects(pos, water.GetComponent<SpriteRenderer>().bounds.size.x);
 
                 if (water != null)
                 {
-                    water.transform.position = new Vector3(pos[0], 0.0001f, pos[2]);
+                    // water.transform.position = new Vector3(pos[0], 0.0001f, pos[2]);
                     water.SetActive(true);
                 }
 

@@ -438,7 +438,6 @@ GameObject:
   - component: {fileID: 250847547}
   - component: {fileID: 250847546}
   - component: {fileID: 250847545}
-  - component: {fileID: 250847549}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -1694,6 +1693,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 241406083}
     m_Modifications:
+    - target: {fileID: 1268604951996596052, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1865231568236371712, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
       propertyPath: m_Name
       value: Sword
