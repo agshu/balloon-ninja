@@ -18,7 +18,6 @@ public class PoolInfo
     public GameObject prefab;
     public GameObject container;
 
-
     public List<GameObject> pool = new List<GameObject>();
 }
 
@@ -44,6 +43,11 @@ public class PoolManager : Singleton<PoolManager>
             GameObject obInstance = null;
             obInstance = Instantiate(info.prefab, info.container.transform);
             obInstance.gameObject.SetActive(false);
+            if (info.type == PoolObjectType.Paint)
+            {
+                float ranScalexy = UnityEngine.Random.Range(0.01f, 0.02f);
+                obInstance.transform.localScale = new Vector3(ranScalexy, ranScalexy, 1);
+            }
             obInstance.transform.position = defaultPos;
             info.pool.Add(obInstance);
         }
