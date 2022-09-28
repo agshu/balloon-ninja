@@ -278,9 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 0}
-  water: {fileID: 0}
 --- !u!1 &209421950
 GameObject:
   m_ObjectHideFlags: 0
@@ -938,18 +935,6 @@ MonoBehaviour:
   m_RotateSpeed: 180
   m_TranslateSpeed: 1
   m_AnchorRotateReferenceFrame: {fileID: 0}
---- !u!114 &250847549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 250847543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab57abde92a2f247b067d186f35119b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &295227088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,9 +1077,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 0}
-  water: {fileID: 0}
 --- !u!1 &508637008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,9 +1221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
-  water: {fileID: 5830712910284271252, guid: 3776928ff93d34d4f9f77dee127ea0ca, type: 3}
 --- !u!1 &600278352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,9 +2528,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 0}
-  water: {fileID: 0}
 --- !u!1 &2042542965
 GameObject:
   m_ObjectHideFlags: 0
@@ -2694,9 +2670,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 0}
-  water: {fileID: 0}
 --- !u!1 &2105899604
 GameObject:
   m_ObjectHideFlags: 0
