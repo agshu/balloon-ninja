@@ -67,12 +67,10 @@ public class BalloonInteraction : MonoBehaviour
 
             if (gameObject.name == "BalloonPrefab(Clone)")
             {
-                Debug.Log(gameObject.name);
                 PopBalloon();
             }
             if (gameObject.name == "BalloonPrefabPaint(Clone)")
             {
-                Debug.Log(gameObject.name);
                 PopBalloon();
             }
             if (gameObject.name == "ballExplosion(Clone)")
@@ -101,9 +99,10 @@ public class BalloonInteraction : MonoBehaviour
 
     private void MoveBalloon(Vector3 newDir)
     {
-        setPush = new Vector3(newDir.x, 0, 0);
-        pushVector = transform.position + setPush;
+        setPush = new Vector3(newDir.x, 0, 0); // sets a new direction after collision
+        heightVector = transform.position + setPush;
         rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
+        Debug.Log(heightVector);
     }
 
     public void explode(Vector3 SwordDir) 
