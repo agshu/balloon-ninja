@@ -68,6 +68,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2931677937514456357, guid: 7926f278f40dd4611bf080eac106ac88, type: 3}
     - target: {fileID: 7563577793787895955, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+      propertyPath: height
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7563577793787895955, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
       propertyPath: confettiExplosionPrefab
       value: 
       objectReference: {fileID: 0}

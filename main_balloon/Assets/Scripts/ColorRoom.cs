@@ -41,6 +41,7 @@ public class ColorRoom : MonoBehaviour
 
                 if (paint != null)
                 {
+                    Debug.Log("Paint rot");
                     paint.transform.position = pos;
                     paint.transform.rotation = Quaternion.Euler(transform.localRotation.eulerAngles + paint.transform.localRotation.eulerAngles);
                     paint.SetActive(true);
@@ -103,7 +104,7 @@ public class ColorRoom : MonoBehaviour
         foreach (var balloonResidue in balloonResidues)
         {
             var dist = Vector3.Distance(balloonResidue.transform.position, point);
-            if (dist < (objectSize/2))
+            if (dist < (objectSize))
             {
                 PoolManager.Instance.ReleasePoolObject(balloonResidue, GetObjectsPoolObjectType(balloonResidue));
                 //Destroy(balloonResidue);
