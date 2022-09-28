@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -1066579951292746438}
   - component: {fileID: 7460638575258313908}
   - component: {fileID: -9053892339362491988}
+  - component: {fileID: 3487479378589104822}
   m_Layer: 0
   m_Name: BalloonPrefab
   m_TagString: Balloon
@@ -325,6 +326,20 @@ MeshCollider:
   m_GameObject: {fileID: 2087820738930468262}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4705177096655183138, guid: 1b32fc721a33dfd45951f1a056f1a654, type: 3}
+--- !u!64 &3487479378589104822
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087820738930468262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
