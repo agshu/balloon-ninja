@@ -37,6 +37,7 @@ public class BalloonInteraction : MonoBehaviour
         balloonRenderer.enabled = true;
 
         rb = GetComponent<Rigidbody>(); //hämtar ballongens rigidbody
+
         setHeight = new Vector3(0, height, 0); 
         heightVector = transform.position + setHeight; //punkt som ballongerna dras till rakt ovanför sig
     }
@@ -85,7 +86,7 @@ public class BalloonInteraction : MonoBehaviour
         }
         if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
         {
-            MoveBalloon(forceDir);
+            MoveBalloon(forceDir, bPos);
         }
     }
 
@@ -97,9 +98,9 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
-    private void MoveBalloon(Vector3 newDir)
+    private void MoveBalloon(Vector3 newDir, Vector3 bPos)
     {
-        setPush = new Vector3(newDir.x, 0, 0); // sets a new direction after collision
+        setPush = new Vector3(newDir.x, height-bPos.y, 0); // sets a new direction after collision. height-bPos to never be above the ceiling
         heightVector = transform.position + setPush;
         rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
         Debug.Log(heightVector);
