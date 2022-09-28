@@ -2,6 +2,7 @@
 //using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -21,6 +22,8 @@ public class BalloonInteraction : MonoBehaviour
     Vector3 setHeight;
     Vector3 heightVector;
     Vector3 dirVec;
+    Vector3 setPush;
+    Vector3 pushVector;
 
     private float cubeSize = 0.1f;
     private int cubesInRow = 2;
@@ -98,8 +101,8 @@ public class BalloonInteraction : MonoBehaviour
 
     private void MoveBalloon(Vector3 newDir)
     {
-        setHeight = new Vector3(newDir.x, 0, 0);
-        heightVector = transform.position + setHeight;
+        setPush = new Vector3(newDir.x, 0, 0);
+        pushVector = transform.position + setPush;
         rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
     }
 
