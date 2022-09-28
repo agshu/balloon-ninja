@@ -65,7 +65,7 @@ public class BalloonInteraction : MonoBehaviour
         {
             balloonPopAudio = GetComponent<AudioSource>();
             balloonPopAudio.Play();
-
+            this.GetComponent<MeshCollider>().enabled=false; //disables mesh collider so that you can't hit the object multiple times
             if (gameObject.name == "BalloonPrefab(Clone)")
             {
                 PopBalloon();
