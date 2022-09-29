@@ -1077,6 +1077,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &373108165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 373108166}
+  m_Layer: 0
+  m_Name: BluePaintContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &373108166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 373108165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.0019416809, y: -0.18341422, z: 0.0016835332}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508637008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,6 +1147,7 @@ MonoBehaviour:
   - {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
   - {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
   - {fileID: 2087820738930468262, guid: fe5601ae670259c48ae2420017a74d04, type: 3}
+  - {fileID: 6976070246198012368, guid: 6c5a20448cc9c4d6cafd3149213bb64f, type: 3}
   spawnTime: 3
   maxNumBalloons: 30
 --- !u!64 &508637010
@@ -2401,7 +2433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3dc317cf92bfc49ae85a88b5257b5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoxingSound: {fileID: 8300000, guid: 3aab34bb67e004e20aa0cce99ecca023, type: 3}
 --- !u!82 &1618376351
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2531,18 +2562,23 @@ MonoBehaviour:
   listOfPool:
   - type: 0
     amount: 150
-    prefab: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+    prefab: {fileID: 5830712910284271252, guid: 594611717a74a4424830ef486031d4bb, type: 3}
     container: {fileID: 295227088}
     pool: []
-  - type: 1
+  - type: 2
     amount: 150
     prefab: {fileID: 5830712910284271252, guid: 3776928ff93d34d4f9f77dee127ea0ca, type: 3}
     container: {fileID: 2042542965}
     pool: []
-  - type: 2
+  - type: 3
     amount: 150
     prefab: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
     container: {fileID: 1939729973}
+    pool: []
+  - type: 1
+    amount: 150
+    prefab: {fileID: 5830712910284271252, guid: 3f0723002252b4157940735fef8d15c6, type: 3}
+    container: {fileID: 373108165}
     pool: []
 --- !u!4 &1686764497
 Transform:

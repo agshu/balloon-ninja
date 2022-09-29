@@ -6,6 +6,7 @@ using UnityEngine;
 public enum PoolObjectType
 {
     Paint,
+    BluePaint,
     Water, 
     Confetti
 }

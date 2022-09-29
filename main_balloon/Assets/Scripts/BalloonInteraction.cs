@@ -83,6 +83,10 @@ public class BalloonInteraction : MonoBehaviour
             {
                 PopBalloonWater(bPos);
             }
+            if (gameObject.name == "BalloonPrefabBluePaint(Clone)")
+            {
+                PopBalloon();
+            }
 
         }
         if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
