@@ -155,8 +155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
 --- !u!64 &56422036
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -417,8 +415,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
 --- !u!64 &158526033
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -561,8 +557,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
 --- !u!64 &173529129
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -739,8 +733,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
 --- !u!64 &261472787
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5747,6 +5739,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6604684233835059275, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e19404b7bc424eaf85fc7d7caee2ff7, type: 3}
 --- !u!4 &422734999 stripped
@@ -5849,8 +5845,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f14ecb686f468774b9537e81984071d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  confetti: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
-  paint: {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
 --- !u!64 &931039282
 MeshCollider:
   m_ObjectHideFlags: 0
