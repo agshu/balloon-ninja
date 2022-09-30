@@ -15,6 +15,7 @@ public class BalloonInteraction : MonoBehaviour
     public float height = 0.8f;
     public float DestroyTime = 1f;
     public GameObject confettiExplosionPrefab;
+    public GameObject waterSplashPrefab;
     public Renderer balloonRenderer;
     private AudioSource balloonPopAudio;
     public GameObject balls;
@@ -56,7 +57,7 @@ public class BalloonInteraction : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         Vector3 bPos = transform.position; 
         Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
         Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest sword point
@@ -80,6 +81,10 @@ public class BalloonInteraction : MonoBehaviour
             }
             if (gameObject.name == "BalloonPrefabWater(Clone)")
             {
+                PopBalloonWater(bPos);
+            }
+            if (gameObject.name == "BalloonPrefabBluePaint(Clone)")
+            {
                 PopBalloon();
             }
 
@@ -98,12 +103,23 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
+    private void PopBalloonWater(Vector3 bPos)
+    {
+        GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
+        GameObject splashExplosion = Instantiate(waterSplashPrefab, new Vector3(bPos.x, 1, bPos.z), confettiExplosionPrefab.transform.rotation);
+
+        Destroy(confettiExplosion, DestroyTime);
+        Destroy(splashExplosion, DestroyTime);
+        balloonRenderer.enabled = false;
+        Destroy(gameObject, balloonPopAudio.clip.length);
+    }
+
     private void MoveBalloon(Vector3 newDir, Vector3 bPos)
     {
         setPush = new Vector3(newDir.x, height-bPos.y, 0); // sets a new direction after collision. height-bPos to never be above the ceiling
         heightVector = transform.position + setPush;
         rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
-        Debug.Log(heightVector);
+        //Debug.Log(heightVector);
     }
 
     public void explode(Vector3 SwordDir) 
