@@ -6,7 +6,7 @@ using UnityEngine;
 public class BalloonGenerator : MonoBehaviour
 {
     public GameObject[] balloonPrefabs;
-    public float spawnTime = 3f;
+    public float spawnTime = 2f;
     public int maxNumBalloons = 30;
     private GameObject[] spawnedBalloons;
 
@@ -27,7 +27,6 @@ public class BalloonGenerator : MonoBehaviour
             GameObject balloon = Instantiate(balloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), balloonPrefab.transform.rotation);
             //GameObject balloon = Instantiate(balloonPrefab);
             balloon.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
-
         }
     }
 

@@ -89,7 +89,7 @@ public class BalloonInteraction : MonoBehaviour
             }
 
         }
-        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
+        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall" || other.gameObject.name == "Body") 
         {
             MoveBalloon(forceDir, bPos);
         }
