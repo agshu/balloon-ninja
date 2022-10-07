@@ -15,6 +15,7 @@ public class BalloonInteraction : MonoBehaviour
     public float height = 0.8f;
     public float DestroyTime = 1f;
     public GameObject confettiExplosionPrefab;
+    public GameObject waterSplashPrefab;
     public Renderer balloonRenderer;
     private AudioSource balloonPopAudio;
     public GameObject balls;
@@ -37,6 +38,7 @@ public class BalloonInteraction : MonoBehaviour
         balloonRenderer.enabled = true;
 
         rb = GetComponent<Rigidbody>(); //hämtar ballongens rigidbody
+
         setHeight = new Vector3(0, height, 0); 
         heightVector = transform.position + setHeight; //punkt som ballongerna dras till rakt ovanför sig
     }
@@ -55,24 +57,22 @@ public class BalloonInteraction : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
         Vector3 bPos = transform.position; 
         Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
         Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest sword point
 
-        if (other.gameObject.name == "Blade") 
+        if (other.gameObject.name == "Sharp") 
         {
             balloonPopAudio = GetComponent<AudioSource>();
             balloonPopAudio.Play();
-
+            this.GetComponent<MeshCollider>().enabled=false; //disables mesh collider so that you can't hit the object multiple times
             if (gameObject.name == "BalloonPrefab(Clone)")
             {
-                Debug.Log(gameObject.name);
                 PopBalloon();
             }
             if (gameObject.name == "BalloonPrefabPaint(Clone)")
             {
-                Debug.Log(gameObject.name);
                 PopBalloon();
             }
             if (gameObject.name == "ballExplosion(Clone)")
@@ -81,13 +81,17 @@ public class BalloonInteraction : MonoBehaviour
             }
             if (gameObject.name == "BalloonPrefabWater(Clone)")
             {
+                PopBalloonWater(bPos);
+            }
+            if (gameObject.name == "BalloonPrefabBluePaint(Clone)")
+            {
                 PopBalloon();
             }
 
         }
-        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall") 
+        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall" || other.gameObject.name == "Body") 
         {
-            MoveBalloon(forceDir);
+            MoveBalloon(forceDir, bPos);
         }
     }
 
@@ -99,11 +103,23 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
-    private void MoveBalloon(Vector3 newDir)
+    private void PopBalloonWater(Vector3 bPos)
     {
-        setPush = new Vector3(newDir.x, 0, 0);
-        pushVector = transform.position + setPush;
+        GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
+        GameObject splashExplosion = Instantiate(waterSplashPrefab, new Vector3(bPos.x, 1, bPos.z), confettiExplosionPrefab.transform.rotation);
+
+        Destroy(confettiExplosion, DestroyTime);
+        Destroy(splashExplosion, DestroyTime);
+        balloonRenderer.enabled = false;
+        Destroy(gameObject, balloonPopAudio.clip.length);
+    }
+
+    private void MoveBalloon(Vector3 newDir, Vector3 bPos)
+    {
+        setPush = new Vector3(newDir.x, height-bPos.y, 0); // sets a new direction after collision. height-bPos to never be above the ceiling
+        heightVector = transform.position + setPush;
         rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
+        //Debug.Log(heightVector);
     }
 
     public void explode(Vector3 SwordDir) 

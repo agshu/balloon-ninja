@@ -51,6 +51,27 @@ public class ColorRoom : MonoBehaviour
                 i++;
             }
         }
+        else if (other.name == "PaintSplatterBlueSpheres")
+        {
+            while (i < numCollisionEvents)
+            {
+                Vector3 pos = collisionEvents[i].intersection;
+
+                GameObject paint = PoolManager.Instance.GetPoolObject(PoolObjectType.BluePaint, pos, transform.localRotation.eulerAngles);
+                CheckNearbyObjects(pos, paint.GetComponent<SpriteRenderer>().bounds.size.x);
+
+                if (paint != null)
+                {
+                    //Debug.Log("Paint rot");
+                    // paint.transform.position = pos;
+                    // paint.transform.rotation = Quaternion.Euler(transform.localRotation.eulerAngles + paint.transform.localRotation.eulerAngles);
+                    paint.SetActive(true);
+                }
+
+                // GameObject paintSplat = Instantiate(paint, pos, paintRotation);
+                i++;
+            }
+        }
         else if (other.name == "ConfettiExplosion 1(Clone)")
         {
             while (i < numCollisionEvents)

@@ -10,7 +10,7 @@ using WebSocketSharp;
 public class BalloonGenerator : MonoBehaviour
 {
     public GameObject[] balloonPrefabs;
-    public float spawnTime = 3f;
+    public float spawnTime = 2f;
     public int maxNumBalloons = 30;
     private GameObject[] spawnedBalloons;
 
@@ -73,11 +73,11 @@ public class BalloonGenerator : MonoBehaviour
         if (balloonPrefab != null && spawnedBalloons.Length+1 <= maxNumBalloons)
         {
             Vector3 randomPos = GetARandomTreePos();
+
             GameObject balloon = Instantiate(balloonPrefab, randomPos, balloonPrefab.transform.rotation);
             SetBalloonColor(balloon, color);
-            //GameObject balloon = Instantiate(balloonPrefab);
-            balloon.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
 
+            balloon.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         }
     }
 

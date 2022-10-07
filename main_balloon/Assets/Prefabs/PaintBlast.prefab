@@ -4884,7 +4884,7 @@ GameObject:
   - component: {fileID: 5320445655038112753}
   m_Layer: 0
   m_Name: PaintBlast
-  m_TagString: Untagged
+  m_TagString: BalloonResidue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
