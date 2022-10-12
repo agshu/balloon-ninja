@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.855
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.26825234, g: 0.2140506, b: 0.27872223, a: 0.855}
+  m_IndirectSpecularColor: {r: 0.26819593, g: 0.21399097, b: 0.27870676, a: 0.855}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1253,14 +1253,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefabs:
-  - {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
-  - {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
-  - {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
-  - {fileID: 2087820738930468262, guid: fe5601ae670259c48ae2420017a74d04, type: 3}
   spawnTime: 3
   maxNumBalloons: 30
-  redBalloonMaterial: {fileID: 2100000, guid: 5470c91a50534c84fbe33f0f407329a5, type: 2}
+  confettiBalloonPrefab: {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
+  waterBalloonPrefab: {fileID: 2087820738930468262, guid: fe5601ae670259c48ae2420017a74d04, type: 3}
+  paintBalloonPrefab: {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
+  marblesBalloonPrefab: {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+  redBalloonMat: {fileID: 2100000, guid: 5470c91a50534c84fbe33f0f407329a5, type: 2}
+  blueBalloonMat: {fileID: 2100000, guid: a6a8cc7a042de084dbe4e6a1bb8a8653, type: 2}
+  greenBalloonMat: {fileID: 2100000, guid: 3c5c4536c2b7a2b4d870da8a1b894f11, type: 2}
+  pinkBalloonMat: {fileID: 2100000, guid: 208544e42afaf5a488d08ff34de92cac, type: 2}
 --- !u!64 &508637010
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1704,14 +1706,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefabs:
-  - {fileID: 2087820738930468262, guid: 08efbeb0966dcaa4992db2e63e3bc718, type: 3}
-  - {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
-  - {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
-  - {fileID: 2087820738930468262, guid: fe5601ae670259c48ae2420017a74d04, type: 3}
   spawnTime: 3
   maxNumBalloons: 30
-  redBalloonMaterial: {fileID: 0}
+  confettiBalloonPrefab: {fileID: 0}
+  waterBalloonPrefab: {fileID: 0}
+  paintBalloonPrefab: {fileID: 0}
+  marblesBalloonPrefab: {fileID: 0}
+  redBalloonMat: {fileID: 0}
+  blueBalloonMat: {fileID: 0}
+  greenBalloonMat: {fileID: 0}
+  pinkBalloonMat: {fileID: 0}
 --- !u!114 &1041687599
 MonoBehaviour:
   m_ObjectHideFlags: 0
