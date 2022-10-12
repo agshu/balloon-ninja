@@ -16,7 +16,7 @@ public class PoolInfo
 {
     public PoolObjectType type;
     public int amount = 0;
-    public GameObject prefab;
+    public GameObject[] prefabs;
     public GameObject container;
 
     public List<GameObject> pool = new List<GameObject>();
@@ -41,14 +41,18 @@ public class PoolManager : Singleton<PoolManager>
     {
         for( int i = 0; i < info.amount; i++)
         {
+            GameObject prefab = info.prefabs[UnityEngine.Random.Range(0, info.prefabs.Length)];
             GameObject obInstance = null;
-            obInstance = Instantiate(info.prefab, info.container.transform);
+            obInstance = Instantiate(prefab, info.container.transform);
             obInstance.gameObject.SetActive(false);
+
+            // If paint it initialises the object with random scale for each
             if (info.type == PoolObjectType.Paint)
             {
                 float ranScalexy = UnityEngine.Random.Range(0.01f, 0.02f);
                 obInstance.transform.localScale = new Vector3(ranScalexy, ranScalexy, 1);
             }
+
             obInstance.transform.position = defaultPos;
             info.pool.Add(obInstance);
         }
@@ -69,7 +73,8 @@ public class PoolManager : Singleton<PoolManager>
         }
         else
         {
-            obInstance = Instantiate(selected.prefab, pos, Quaternion.Euler(relativeRot + selected.prefab.transform.localRotation.eulerAngles), selected.container.transform);
+            GameObject prefab = selected.prefabs[UnityEngine.Random.Range(0, selected.prefabs.Length)];
+            obInstance = Instantiate(prefab, pos, Quaternion.Euler(relativeRot + prefab.transform.localRotation.eulerAngles), selected.container.transform);
         }
         return obInstance;
     }

@@ -3067,17 +3067,21 @@ MonoBehaviour:
   listOfPool:
   - type: 0
     amount: 150
-    prefab: {fileID: 5830712910284271252, guid: 594611717a74a4424830ef486031d4bb, type: 3}
+    prefabs:
+    - {fileID: 5830712910284271252, guid: 75a634f02c4c74e4597c89ab950c2f1f, type: 3}
+    - {fileID: 5830712910284271252, guid: 594611717a74a4424830ef486031d4bb, type: 3}
     container: {fileID: 295227088}
     pool: []
   - type: 2
     amount: 150
-    prefab: {fileID: 5830712910284271252, guid: 3776928ff93d34d4f9f77dee127ea0ca, type: 3}
+    prefabs:
+    - {fileID: 5830712910284271252, guid: 3776928ff93d34d4f9f77dee127ea0ca, type: 3}
     container: {fileID: 2042542965}
     pool: []
   - type: 3
     amount: 150
-    prefab: {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
+    prefabs:
+    - {fileID: 2368818364433563831, guid: eae05311ee6edaf43b00ec9318800a7f, type: 3}
     container: {fileID: 1939729973}
     pool: []
 --- !u!4 &1686764497

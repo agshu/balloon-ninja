@@ -12,6 +12,7 @@ public class BalloonGenerator : MonoBehaviour
     public float spawnTime = 2f;
     public int maxNumBalloons = 30;
     private GameObject[] spawnedBalloons;
+    private string[] messageArray;
 
     // Balloon options
     public GameObject confettiBalloonPrefab;
@@ -25,7 +26,6 @@ public class BalloonGenerator : MonoBehaviour
     public Material greenBalloonMat;
     public Material pinkBalloonMat;
 
-    private string[] messageArray;
     WebSocket ws;
 
     void Start()
@@ -63,8 +63,6 @@ public class BalloonGenerator : MonoBehaviour
 
     private void HandleMessage(string message)
     {
-        UnityEngine.Debug.Log("Message from server " + message);
-
         messageArray = message.Split(",");
         UnityEngine.Debug.Log("Color: " + messageArray[0] + ", Explosion: " + messageArray[1] + ", Sound: " + messageArray[2]);
         BalloonSpawn(messageArray[0], messageArray[1]);
@@ -80,9 +78,7 @@ public class BalloonGenerator : MonoBehaviour
         if (spawnedBalloons.Length+1 <= maxNumBalloons)
         {
             Vector3 randomPos = GetARandomTreePos();
-            UnityEngine.Debug.Log("Random pos on plane (aka rug): " + randomPos.ToString());
             GameObject balloon = null;
-
             if (explosion == "confetti")
             {
                 balloon = Instantiate(confettiBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), confettiBalloonPrefab.transform.rotation);
@@ -128,7 +124,6 @@ public class BalloonGenerator : MonoBehaviour
         if (color == "red")
         {
             balloonRenderer.material = redBalloonMat;
-            // balloonRenderer.material.color = new Color(rgbColor[0], rgbColor[1], rgbColor[2], 1);
         }
         if (color == "blue")
         {
@@ -142,7 +137,6 @@ public class BalloonGenerator : MonoBehaviour
         {
             balloonRenderer.material = pinkBalloonMat;
         }
-
     }
 
     public Vector3 GetARandomTreePos()
