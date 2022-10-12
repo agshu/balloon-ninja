@@ -13,6 +13,7 @@ public class BalloonGenerator : MonoBehaviour
     public float spawnTime = 2f;
     public int maxNumBalloons = 30;
     private GameObject[] spawnedBalloons;
+    public Material redBalloonMaterial;
 
     private string[] messageArray;
     WebSocket ws;
@@ -74,7 +75,8 @@ public class BalloonGenerator : MonoBehaviour
         {
             Vector3 randomPos = GetARandomTreePos();
 
-            GameObject balloon = Instantiate(balloonPrefab, randomPos, balloonPrefab.transform.rotation);
+            UnityEngine.Debug.Log("random pos: " + randomPos);
+            GameObject balloon = Instantiate(balloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), balloonPrefab.transform.rotation);
             SetBalloonColor(balloon, color);
 
             balloon.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
@@ -87,7 +89,8 @@ public class BalloonGenerator : MonoBehaviour
 
         Renderer balloonRenderer = balloon.GetComponent<Renderer>();
 
-        balloonRenderer.material.color = new Color(rgbColor[0], rgbColor[1], rgbColor[2], 1);
+        balloonRenderer.material = redBalloonMaterial;
+        // balloonRenderer.material.color = new Color(rgbColor[0], rgbColor[1], rgbColor[2], 1);
     }
 
     public Vector3 GetARandomTreePos()
