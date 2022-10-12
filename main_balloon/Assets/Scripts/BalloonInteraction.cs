@@ -14,11 +14,14 @@ public class BalloonInteraction : MonoBehaviour
     public float maxBalloonScale = 0.3f;
     public float height = 0.8f;
     public float DestroyTime = 1f;
+    public float DiscoTime = 5f;
     public GameObject confettiExplosionPrefab;
     public GameObject waterSplashPrefab;
     public Renderer balloonRenderer;
     private AudioSource balloonPopAudio;
     public GameObject balls;
+    public GameObject discoBallPrefab;
+    private GameObject roomLight;
 
     Vector3 setHeight;
     Vector3 heightVector;
@@ -41,6 +44,8 @@ public class BalloonInteraction : MonoBehaviour
 
         setHeight = new Vector3(0, height, 0); 
         heightVector = transform.position + setHeight; //punkt som ballongerna dras till rakt ovanför sig
+
+        roomLight = GameObject.FindWithTag("Light");
     }
 
     void FixedUpdate()
@@ -54,6 +59,10 @@ public class BalloonInteraction : MonoBehaviour
         dirVec = dirVec.normalized;
         dirVec = dirVec * force; 
         rb.AddForce(dirVec);
+
+        if(GameObject.Find("discoBall(Clone)") == null){ // sätter på lampan om det inte finns någon discokula
+            roomLight.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -87,6 +96,11 @@ public class BalloonInteraction : MonoBehaviour
             {
                 PopBalloon();
             }
+            if (gameObject.name == "BalloonPrefabDisco(Clone)")
+            {
+                Debug.Log(gameObject.name);
+                DiscoBalloon();
+            }
 
         }
         if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall" || other.gameObject.name == "Body") 
@@ -99,9 +113,18 @@ public class BalloonInteraction : MonoBehaviour
     {
         GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
         Destroy(confettiExplosion, DestroyTime);
-        balloonRenderer.enabled = false;
+        balloonRenderer.enabled = false; //detta är för poolen
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
+
+    private void DiscoBalloon()
+    {
+        GameObject discoBall = Instantiate(discoBallPrefab, gameObject.transform.position, discoBallPrefab.transform.rotation);
+        roomLight.SetActive(false);
+        Destroy(discoBall, DiscoTime);
+        Destroy(gameObject, balloonPopAudio.clip.length);
+    }
+
 
     private void PopBalloonWater(Vector3 bPos)
     {
