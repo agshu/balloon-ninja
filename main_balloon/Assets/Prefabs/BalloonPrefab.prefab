@@ -122,9 +122,12 @@ MonoBehaviour:
   maxBalloonScale: 0.3
   height: 1.9
   DestroyTime: 1
-  confettiExplosionPrefab: {fileID: 1571038619711072835, guid: ee62467a1ec3ebe4e8e164d487cfdfe0, type: 3}
+  DiscoTime: 5
+  explosionPrefab: {fileID: 8029022774087785416, guid: dcc0dbb5f26c97b4bbb4064b63ae309f, type: 3}
+  waterSplashPrefab: {fileID: 0}
   balloonRenderer: {fileID: 0}
   balls: {fileID: 0}
+  discoBallPrefab: {fileID: 0}
 --- !u!82 &-1066579951292746438
 AudioSource:
   m_ObjectHideFlags: 0

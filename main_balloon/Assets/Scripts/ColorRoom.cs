@@ -72,7 +72,7 @@ public class ColorRoom : MonoBehaviour
                 i++;
             }
         }
-        else if (other.name == "ConfettiExplosion 1(Clone)")
+        else if (other.name == "ConfettiExplosion_new(Clone)")
         {
             while (i < numCollisionEvents)
             {

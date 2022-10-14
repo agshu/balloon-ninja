@@ -15,7 +15,7 @@ public class BalloonInteraction : MonoBehaviour
     public float height = 0.8f;
     public float DestroyTime = 1f;
     public float DiscoTime = 5f;
-    public GameObject confettiExplosionPrefab;
+    public GameObject explosionPrefab;
     public GameObject waterSplashPrefab;
     public Renderer balloonRenderer;
     private AudioSource balloonPopAudio;
@@ -111,8 +111,8 @@ public class BalloonInteraction : MonoBehaviour
 
     private void PopBalloon()
     {
-        GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
-        Destroy(confettiExplosion, DestroyTime);
+        GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, explosionPrefab.transform.rotation);
+        Destroy(explosion, DestroyTime);
         balloonRenderer.enabled = false; //detta är för poolen
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
@@ -128,10 +128,10 @@ public class BalloonInteraction : MonoBehaviour
 
     private void PopBalloonWater(Vector3 bPos)
     {
-        GameObject confettiExplosion = Instantiate(confettiExplosionPrefab, gameObject.transform.position, confettiExplosionPrefab.transform.rotation);
-        GameObject splashExplosion = Instantiate(waterSplashPrefab, new Vector3(bPos.x, 1, bPos.z), confettiExplosionPrefab.transform.rotation);
+        GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, explosionPrefab.transform.rotation);
+        GameObject splashExplosion = Instantiate(waterSplashPrefab, new Vector3(bPos.x, 1, bPos.z), explosionPrefab.transform.rotation);
 
-        Destroy(confettiExplosion, DestroyTime);
+        Destroy(explosion, DestroyTime);
         Destroy(splashExplosion, DestroyTime);
         balloonRenderer.enabled = false;
         Destroy(gameObject, balloonPopAudio.clip.length);

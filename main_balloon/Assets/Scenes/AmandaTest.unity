@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 209421953}
   m_Layer: 0
   m_Name: Directional Light
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1259,6 +1259,7 @@ MonoBehaviour:
   waterBalloonPrefab: {fileID: 2087820738930468262, guid: fe5601ae670259c48ae2420017a74d04, type: 3}
   paintBalloonPrefab: {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
   marblesBalloonPrefab: {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
+  discoBalloonPrefab: {fileID: 4526421655421469252, guid: 5af04ef8857be4631820f2a15c5bf623, type: 3}
   redBalloonMat: {fileID: 2100000, guid: 5470c91a50534c84fbe33f0f407329a5, type: 2}
   blueBalloonMat: {fileID: 2100000, guid: a6a8cc7a042de084dbe4e6a1bb8a8653, type: 2}
   greenBalloonMat: {fileID: 2100000, guid: 3c5c4536c2b7a2b4d870da8a1b894f11, type: 2}
@@ -1712,6 +1713,7 @@ MonoBehaviour:
   waterBalloonPrefab: {fileID: 0}
   paintBalloonPrefab: {fileID: 0}
   marblesBalloonPrefab: {fileID: 0}
+  discoBalloonPrefab: {fileID: 0}
   redBalloonMat: {fileID: 0}
   blueBalloonMat: {fileID: 0}
   greenBalloonMat: {fileID: 0}
