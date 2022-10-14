@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 886617007638623961}
   - component: {fileID: 3642109372770914483}
   - component: {fileID: 7396251210701412665}
+  - component: {fileID: 7283031553752628413}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -91,9 +92,25 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2931677937514456357}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: b905e2083f48d450b96b1f4e36e706d4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7283031553752628413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2931677937514456357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44688bd2565084f22afdbb462447d7d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timer: 0
+  shrinkTime: 6
+  minSize: 0.5
+  isMinSize: 0
