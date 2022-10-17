@@ -60,7 +60,7 @@ public class BalloonInteraction : MonoBehaviour
         dirVec = dirVec * force; 
         rb.AddForce(dirVec);
 
-        if(GameObject.Find("discoBall(Clone)") == null){ // sätter på lampan om det inte finns någon discokula
+        if(GameObject.Find("discoBall2(Clone)") == null){ // sätter på lampan om det inte finns någon discokula
             roomLight.SetActive(true);
         }
     }
