@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShrinkBall : MonoBehaviour
+/*public class ShrinkBall : MonoBehaviour
 {
     public float timer = 0f;
     public float shrinkTime = 6f;
@@ -39,3 +39,4 @@ public class ShrinkBall : MonoBehaviour
     }
 
 }
+*/

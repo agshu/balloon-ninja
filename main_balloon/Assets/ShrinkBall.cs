@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShrinkBall : MonoBehaviour
 {
-<<<<<<< Updated upstream
     public float timer = 0f;
     public float shrinkTime = 6f;
     public float minSize = 0.5f;
@@ -32,17 +31,4 @@ public class ShrinkBall : MonoBehaviour
         isMinSize = true;
     }
 
-=======
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
->>>>>>> Stashed changes
 }
