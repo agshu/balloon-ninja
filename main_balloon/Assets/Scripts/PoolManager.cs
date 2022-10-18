@@ -28,7 +28,7 @@ public class PoolManager : Singleton<PoolManager>
     List<PoolInfo> listOfPool;
 
     private Vector3 defaultPos = new Vector3(0, 0, 0);
-    private Quaternion defaultRotPaint = Quaternion.Euler(new Vector3(90, 0, 0));
+    private Quaternion defaultRotPaint = Quaternion.Euler(new Vector3(0, 0, 0));
 
     // Start is called before the first frame update
     void Start()

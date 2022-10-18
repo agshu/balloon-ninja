@@ -2835,6 +2835,7 @@ MonoBehaviour:
     amount: 150
     prefabs:
     - {fileID: 2565464085023765346, guid: 3b9b78242a721d14e9942e0cbf681170, type: 3}
+    - {fileID: 1391439551360172827, guid: b16c0d36177929a4ba4e2374e8b736cc, type: 3}
     container: {fileID: 295227088}
     pool: []
   - type: 2
