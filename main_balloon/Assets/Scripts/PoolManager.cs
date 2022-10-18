@@ -27,7 +27,7 @@ public class PoolManager : Singleton<PoolManager>
     [SerializeField]
     List<PoolInfo> listOfPool;
 
-    private Vector3 defaultPos = new Vector3(-100, -100, -100);
+    private Vector3 defaultPos = new Vector3(0, 0, 0);
     private Quaternion defaultRotPaint = Quaternion.Euler(new Vector3(90, 0, 0));
 
     // Start is called before the first frame update
@@ -49,8 +49,7 @@ public class PoolManager : Singleton<PoolManager>
             // If paint it initialises the object with random scale for each
             if (info.type == PoolObjectType.Paint)
             {
-                float ranScalexy = UnityEngine.Random.Range(0.01f, 0.02f);
-                obInstance.transform.localScale = new Vector3(ranScalexy, ranScalexy, 1);
+                obInstance.transform.localScale = new Vector3(UnityEngine.Random.Range(3.5f, 5.5f), 1, UnityEngine.Random.Range(3.5f, 5.5f));
             }
 
             obInstance.transform.position = defaultPos;
@@ -68,8 +67,9 @@ public class PoolManager : Singleton<PoolManager>
         {
             obInstance = pool[pool.Count - 1];
             pool.Remove(obInstance);
-            obInstance.transform.position = pos;
+            
             obInstance.transform.rotation = Quaternion.Euler(relativeRot + obInstance.transform.localRotation.eulerAngles);
+            obInstance.transform.position = pos;
         }
         else
         {

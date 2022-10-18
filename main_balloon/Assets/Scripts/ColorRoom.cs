@@ -29,21 +29,32 @@ public class ColorRoom : MonoBehaviour
         int numCollisionEvents = part.GetCollisionEvents(gameObject, collisionEvents);
         int i = 0;
 
+        UnityEngine.Debug.Log("Collision with: " + this.name);
 
-        if (other.name == "PaintSplatterSpheres")
+
+        if (other.name == "PaintSplatter")
         {
             while (i < numCollisionEvents)
             {
-                Vector3 pos = collisionEvents[i].intersection;
+                GameObject paint = null;
+                if (gameObject.tag == "Floor")
+                {
+                    Vector3 pos = new Vector3(collisionEvents[i].intersection[0], 0.0001f, collisionEvents[i].intersection[2]);
 
-                GameObject paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint, pos, transform.localRotation.eulerAngles);
-                CheckNearbyObjects(pos, paint.GetComponent<SpriteRenderer>().bounds.size.x);
+                    paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint, pos, transform.localRotation.eulerAngles);
+                    CheckNearbyObjects(pos, paint.GetComponent<MeshRenderer>().bounds.size.x);
+                } else if (gameObject.tag == "Walls")
+                {
+                    Vector3 pos = collisionEvents[i].intersection;
+                    paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint, pos, transform.localRotation.eulerAngles);
+                    CheckNearbyObjects(pos, paint.GetComponent<MeshRenderer>().bounds.size.x);
+                } else
+                {
+                    return;
+                }
 
                 if (paint != null)
                 {
-                    Debug.Log("Paint rot");
-                    // paint.transform.position = pos;
-                    // paint.transform.rotation = Quaternion.Euler(transform.localRotation.eulerAngles + paint.transform.localRotation.eulerAngles);
                     paint.SetActive(true);
                 }
 
@@ -76,9 +87,9 @@ public class ColorRoom : MonoBehaviour
         {
             while (i < numCollisionEvents)
             {
-                Vector3 pos = collisionEvents[i].intersection;
+                Vector3 pos = new Vector3(collisionEvents[i].intersection[0], 0.0001f, collisionEvents[i].intersection[2]);
 
-                GameObject confetti = PoolManager.Instance.GetPoolObject(PoolObjectType.Confetti, new Vector3(pos[0], 0.0001f, pos[2]), new Vector3(0, 0, 0));
+                GameObject confetti = PoolManager.Instance.GetPoolObject(PoolObjectType.Confetti, pos, new Vector3(0, 0, 0));
 
                 // Get random color from array of colors and set material to it
                 int rnd = UnityEngine.Random.Range(0, colors.Length);
