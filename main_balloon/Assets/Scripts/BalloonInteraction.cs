@@ -21,7 +21,6 @@ public class BalloonInteraction : MonoBehaviour
     private AudioSource balloonPopAudio;
     public GameObject balls;
     public GameObject discoBallPrefab;
-    private GameObject roomLight;
 
     Vector3 setHeight;
     Vector3 heightVector;
@@ -38,6 +37,7 @@ public class BalloonInteraction : MonoBehaviour
     void Start()
     {
         balloonRenderer = GetComponent<Renderer>();
+
         balloonRenderer.enabled = true;
 
         rb = GetComponent<Rigidbody>(); //hämtar ballongens rigidbody
@@ -45,7 +45,6 @@ public class BalloonInteraction : MonoBehaviour
         setHeight = new Vector3(0, height, 0); 
         heightVector = transform.position + setHeight; //punkt som ballongerna dras till rakt ovanför sig
 
-        roomLight = GameObject.FindWithTag("Light");
     }
 
     void FixedUpdate()
@@ -59,14 +58,11 @@ public class BalloonInteraction : MonoBehaviour
         dirVec = dirVec.normalized;
         dirVec = dirVec * force; 
         rb.AddForce(dirVec);
-
-        if(GameObject.Find("discoBall2(Clone)") == null){ // sätter på lampan om det inte finns någon discokula
-            roomLight.SetActive(true);
-        }
+        
     }
 
+
     private void OnTriggerEnter(Collider other) {
-        //Debug.Log(other.gameObject.name);
         Vector3 bPos = transform.position; 
         Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
         Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest sword point
@@ -98,7 +94,6 @@ public class BalloonInteraction : MonoBehaviour
             }
             if (gameObject.name == "BalloonPrefabDisco(Clone)")
             {
-                Debug.Log(gameObject.name);
                 DiscoBalloon();
             }
 
@@ -120,7 +115,6 @@ public class BalloonInteraction : MonoBehaviour
     private void DiscoBalloon()
     {
         GameObject discoBall = Instantiate(discoBallPrefab, gameObject.transform.position, discoBallPrefab.transform.rotation);
-        roomLight.SetActive(false);
         Destroy(discoBall, DiscoTime);
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
