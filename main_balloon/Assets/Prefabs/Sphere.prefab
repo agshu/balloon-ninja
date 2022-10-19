@@ -111,6 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  shrinkTime: 6
-  minSize: 0.5
+  shrinkTime: 10
+  minSize: 0.05
   isMinSize: 0
