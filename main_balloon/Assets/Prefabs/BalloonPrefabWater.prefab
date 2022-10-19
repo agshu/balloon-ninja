@@ -123,8 +123,8 @@ MonoBehaviour:
   height: 1.9
   DestroyTime: 2
   DiscoTime: 5
-  explosionPrefab: {fileID: 1605228911882404939, guid: a8bfb3cf219424d948d59ec4e06dde4c, type: 3}
-  waterSplashPrefab: {fileID: 6302878757214305428, guid: 630411660415840b382318dc00a21d5b, type: 3}
+  explosionPrefab: {fileID: 8116430382636961811, guid: c6c087879b0d3488bb5ce74333349e7d, type: 3}
+  waterSplashPrefab: {fileID: 3519414162747372840, guid: 77ab3e9bb005d43ec860f95e40333a50, type: 3}
   balloonRenderer: {fileID: 0}
   balls: {fileID: 0}
   discoBallPrefab: {fileID: 0}
