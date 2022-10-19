@@ -115,7 +115,7 @@ public class ColorRoom : MonoBehaviour
                 Vector3 pos = collisionEvents[i].intersection;
 
                 GameObject water = PoolManager.Instance.GetPoolObject(PoolObjectType.Water, new Vector3(pos[0], 0.0001f, pos[2]), new Vector3 (0,0,0));
-                CheckNearbyObjects(pos, water.GetComponent<SpriteRenderer>().bounds.size.x);
+                CheckNearbyObjects(pos, water.GetComponent<MeshRenderer>().bounds.size.x);
 
                 if (water != null)
                 {
@@ -139,7 +139,7 @@ public class ColorRoom : MonoBehaviour
             if (dist < (objectSize))
             {
                 PoolManager.Instance.ReleasePoolObject(balloonResidue, GetObjectsPoolObjectType(balloonResidue));
-                //Destroy(balloonResidue);
+                Destroy(balloonResidue);
             }
         }
     }

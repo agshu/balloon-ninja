@@ -50,6 +50,9 @@ public class PoolManager : Singleton<PoolManager>
             if (info.type == PoolObjectType.Paint)
             {
                 obInstance.transform.localScale = new Vector3(UnityEngine.Random.Range(3.5f, 5.5f), 1, UnityEngine.Random.Range(3.5f, 5.5f));
+            } else if (info.type == PoolObjectType.Water)
+            {
+                obInstance.transform.localScale = new Vector3(UnityEngine.Random.Range(10.5f, 12.5f), 1, UnityEngine.Random.Range(10.5f, 12.5f));
             }
 
             obInstance.transform.position = defaultPos;
