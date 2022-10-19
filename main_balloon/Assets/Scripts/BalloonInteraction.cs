@@ -71,7 +71,7 @@ public class BalloonInteraction : MonoBehaviour
         Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
         Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest sword point
 
-        if (other.gameObject.name == "Sharp") 
+        if (other.gameObject.name == "Sharp" || other.gameObject.name == "spikes" ) 
         {
             balloonPopAudio = GetComponent<AudioSource>();
             balloonPopAudio.Play();
