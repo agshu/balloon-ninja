@@ -14,7 +14,6 @@ public class BalloonInteraction : MonoBehaviour
     public float maxBalloonScale = 0.3f;
     public float height = 0.8f;
     public float DestroyTime = 1f;
-    public float DiscoTime = 5f;
     public GameObject explosionPrefab;
     public GameObject waterSplashPrefab;
     public Renderer balloonRenderer;
@@ -115,8 +114,8 @@ public class BalloonInteraction : MonoBehaviour
     private void DiscoBalloon()
     {
         GameObject discoBall = Instantiate(discoBallPrefab, gameObject.transform.position, discoBallPrefab.transform.rotation);
-        Destroy(discoBall, DiscoTime);
-        Destroy(gameObject, balloonPopAudio.clip.length);
+        Destroy(gameObject);
+        Destroy(discoBall, 5.5f);
     }
 
 
