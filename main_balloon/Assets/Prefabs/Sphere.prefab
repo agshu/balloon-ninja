@@ -92,11 +92,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2931677937514456357}
-<<<<<<< Updated upstream
-  m_Material: {fileID: 13400000, guid: b905e2083f48d450b96b1f4e36e706d4, type: 2}
-=======
   m_Material: {fileID: 13400000, guid: b522b42aa6f5446588c971c02372d0ca, type: 2}
->>>>>>> Stashed changes
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -115,6 +111,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 0
-  shrinkTime: 6
-  minSize: 0.5
+  shrinkTime: 10
+  minSize: 0.05
   isMinSize: 0

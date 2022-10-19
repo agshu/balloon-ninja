@@ -7,6 +7,8 @@ TagManager:
   - Balloon
   - BalloonResidue
   - Light
+  - Walls
+  - Floor
   layers:
   - Default
   - TransparentFX

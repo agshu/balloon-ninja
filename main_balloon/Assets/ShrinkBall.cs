@@ -5,8 +5,8 @@ using UnityEngine;
 public class ShrinkBall : MonoBehaviour
 {
     public float timer = 0f;
-    public float shrinkTime = 6f;
-    public float minSize = 0.5f;
+    public float shrinkTime = 10f;
+    public float minSize = 0.05f;
 
     public bool isMinSize = false;
 
@@ -20,7 +20,7 @@ public class ShrinkBall : MonoBehaviour
     private IEnumerator Shrink()
     {
         Vector2 startScale = transform.localScale;
-        Vector2 minScale = new Vector2(minSize, minSize);
+        Vector3 minScale = new Vector3(minSize, minSize, minSize);
 
         do {
             transform.localScale = Vector3.Lerp(startScale, minScale, timer / shrinkTime);
@@ -29,6 +29,7 @@ public class ShrinkBall : MonoBehaviour
         }
         while(timer < shrinkTime);
         isMinSize = true;
+        if(isMinSize == true){Destroy(gameObject);}
     }
 
 }
