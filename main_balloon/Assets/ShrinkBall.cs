@@ -20,7 +20,7 @@ public class ShrinkBall : MonoBehaviour
     private IEnumerator Shrink()
     {
         Vector2 startScale = transform.localScale;
-        Vector2 minScale = new Vector2(minSize, minSize);
+        Vector3 minScale = new Vector3(minSize, minSize, minSize);
 
         do {
             transform.localScale = Vector3.Lerp(startScale, minScale, timer / shrinkTime);
