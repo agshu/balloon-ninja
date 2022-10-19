@@ -139,7 +139,7 @@ public class ColorRoom : MonoBehaviour
             if (dist < (objectSize))
             {
                 PoolManager.Instance.ReleasePoolObject(balloonResidue, GetObjectsPoolObjectType(balloonResidue));
-                //Destroy(balloonResidue);
+                Destroy(balloonResidue);
             }
         }
     }
