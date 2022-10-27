@@ -88,6 +88,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ChangeWeaponLeft",
+                    "type": "Button",
+                    "id": "e2838471-bc9e-412e-aeca-25804a0e0231",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -198,6 +207,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Tracking State",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "862a6e0f-df25-4b99-a38e-90c8ff6844f3",
+                    "path": "<XRController>{LeftHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeaponLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -608,6 +628,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "ChangeWeaponRight",
+                    "type": "Button",
+                    "id": "f948a169-b281-4d34-98de-463d33be457e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Switch",
                     "type": "Button",
                     "id": "780ca1bd-1adc-4e65-ab79-3d06426cc123",
@@ -731,11 +760,22 @@
                 {
                     "name": "",
                     "id": "04f6f159-aab1-48e2-b44b-8824dbdf91f7",
-                    "path": "<XRController>{RightHand}/primaryButton",
+                    "path": "<XRController>{RightHand}/secondaryButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "50fd700d-a6b3-423e-a477-3dc86f7b7a85",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ChangeWeaponRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
