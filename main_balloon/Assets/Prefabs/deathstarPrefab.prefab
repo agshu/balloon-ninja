@@ -92,9 +92,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3451533754707991449}
+  - component: {fileID: 2888996841615195215}
+  - component: {fileID: 3355433297985332423}
+  - component: {fileID: -6442958887441245852}
   m_Layer: 0
-  m_Name: deathstar 1
-  m_TagString: Untagged
+  m_Name: deathstarPrefab
+  m_TagString: Balloon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,6 +119,56 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -78.41, z: 0}
+--- !u!114 &2888996841615195215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642943400849146147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62d1124605bf646e2b7c3d8351c05aab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 1
+  inflationRate: 1.1
+  maxBalloonScale: 0.3
+  height: 1.9
+  DestroyTime: 1
+  explosionPrefab: {fileID: 8029022774087785416, guid: dcc0dbb5f26c97b4bbb4064b63ae309f, type: 3}
+  waterSplashPrefab: {fileID: 0}
+  balloonRenderer: {fileID: 0}
+  balls: {fileID: 0}
+  discoBallPrefab: {fileID: 0}
+--- !u!64 &3355433297985332423
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642943400849146147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4705177096655183138, guid: 1b32fc721a33dfd45951f1a056f1a654, type: 3}
+--- !u!64 &-6442958887441245852
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2642943400849146147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4705177096655183138, guid: 1b32fc721a33dfd45951f1a056f1a654, type: 3}
 --- !u!1 &6462679662221861860
 GameObject:
   m_ObjectHideFlags: 0
