@@ -12,6 +12,7 @@ TagManager:
   - PaintResidue
   - WaterResidue
   - ConfettiResidue
+  - Controller
   layers:
   - Default
   - TransparentFX

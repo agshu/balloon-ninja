@@ -12,6 +12,7 @@ public class ControllerVelocity : MonoBehaviour
     private void Update()
     {
         Velocity = velocityProperty.action.ReadValue<Vector3>();
+        Debug.Log("ControllVelocity " + Velocity);
     }
 
 }

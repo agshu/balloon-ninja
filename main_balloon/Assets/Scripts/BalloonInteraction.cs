@@ -33,8 +33,15 @@ public class BalloonInteraction : MonoBehaviour
     float cubesPivotDistance;
     Vector3 cubesPivot;
 
+    //controller velocity
+    private ControllerVelocity controllerVelocity;
+    public GameObject controller; 
+
     void Start()
-    {
+    {   
+        controller = GameObject.FindWithTag("Controller");
+        controllerVelocity = controller.GetComponent<ControllerVelocity>();
+
         balloonRenderer = GetComponent<Renderer>();
 
         balloonRenderer.enabled = true;
@@ -57,7 +64,6 @@ public class BalloonInteraction : MonoBehaviour
         dirVec = dirVec.normalized;
         dirVec = dirVec * force; 
         rb.AddForce(dirVec);
-        
     }
 
 
@@ -134,8 +140,8 @@ public class BalloonInteraction : MonoBehaviour
     {
         setPush = new Vector3(newDir.x, height-bPos.y, 0); // sets a new direction after collision. height-bPos to never be above the ceiling
         heightVector = transform.position + setPush;
-        rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
-        //Debug.Log(heightVector);
+        //rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
+        rb.AddForce(newDir*controllerVelocity.Velocity.x);
     }
 
     public void explode(Vector3 SwordDir) 
