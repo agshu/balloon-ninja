@@ -42,12 +42,12 @@ public class ColorRoom : MonoBehaviour
                     Vector3 pos = new Vector3(collisionEvents[i].intersection[0], 0.0001f, collisionEvents[i].intersection[2]);
 
                     paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint, pos, transform.localRotation.eulerAngles);
-                    CheckNearbyObjects(pos, paint.GetComponent<MeshRenderer>().bounds.size.x);
+                    CheckNearbyObjects("PaintResidue", pos, paint.GetComponent<MeshRenderer>().bounds.size.x);
                 } else if (gameObject.tag == "Walls")
                 {
                     Vector3 pos = collisionEvents[i].intersection;
                     paint = PoolManager.Instance.GetPoolObject(PoolObjectType.Paint, pos, transform.localRotation.eulerAngles);
-                    CheckNearbyObjects(pos, paint.GetComponent<MeshRenderer>().bounds.size.x);
+                    CheckNearbyObjects("PaintResidue", pos, paint.GetComponent<MeshRenderer>().bounds.size.x);
                 } else
                 {
                     return;
@@ -69,7 +69,7 @@ public class ColorRoom : MonoBehaviour
                 Vector3 pos = collisionEvents[i].intersection;
 
                 GameObject paint = PoolManager.Instance.GetPoolObject(PoolObjectType.BluePaint, pos, transform.localRotation.eulerAngles);
-                CheckNearbyObjects(pos, paint.GetComponent<SpriteRenderer>().bounds.size.x);
+                CheckNearbyObjects("PaintResidue", pos, paint.GetComponent<SpriteRenderer>().bounds.size.x);
 
                 if (paint != null)
                 {
@@ -96,7 +96,7 @@ public class ColorRoom : MonoBehaviour
                 var confettiRenderer = confetti.GetComponent<Renderer>();
                 confettiRenderer.material.color = colors[rnd];
 
-                CheckNearbyObjects(pos, confetti.GetComponent<MeshRenderer>().bounds.size.x);
+                CheckNearbyObjects("ConfettiResidue", pos, confetti.GetComponent<MeshRenderer>().bounds.size.x);
 
                 if (confetti != null)
                 {
@@ -115,7 +115,7 @@ public class ColorRoom : MonoBehaviour
                 Vector3 pos = collisionEvents[i].intersection;
 
                 GameObject water = PoolManager.Instance.GetPoolObject(PoolObjectType.Water, new Vector3(pos[0], 0.0001f, pos[2]), new Vector3 (0,0,0));
-                CheckNearbyObjects(pos, water.GetComponent<MeshRenderer>().bounds.size.x);
+                CheckNearbyObjects("WaterResidue", pos, water.GetComponent<MeshRenderer>().bounds.size.x);
 
                 if (water != null)
                 {
@@ -129,19 +129,26 @@ public class ColorRoom : MonoBehaviour
         }
     }
 
-    void CheckNearbyObjects(Vector3 point, float objectSize)
+    void CheckNearbyObjects(string balloonResTag, Vector3 point, float objectSize)
     {
-        GameObject[] balloonResidues = GameObject.FindGameObjectsWithTag("BalloonResidue");
 
-        foreach (var balloonResidue in balloonResidues)
+        string[] residueTagArray = { "PaintResidue", "WaterResidue", "ConfettiResidue" };
+        List<string> residueTagList = new List<string>(residueTagArray);
+        residueTagList.Remove(balloonResTag);
+
+        foreach (var residueTag in residueTagList)
         {
-            var dist = Vector3.Distance(balloonResidue.transform.position, point);
-            if (dist < (objectSize))
+            GameObject[] balloonResidues = GameObject.FindGameObjectsWithTag(residueTag);
+            foreach (var balloonResidue in balloonResidues)
             {
-                PoolManager.Instance.ReleasePoolObject(balloonResidue, GetObjectsPoolObjectType(balloonResidue));
-                // Destroy(balloonResidue);
+                var dist = Vector3.Distance(balloonResidue.transform.position, point);
+                if (dist < (objectSize))
+                {
+                    PoolManager.Instance.ReleasePoolObject(balloonResidue, GetObjectsPoolObjectType(balloonResidue));
+                }
             }
         }
+
     }
 
     private PoolObjectType GetObjectsPoolObjectType(GameObject ob)
