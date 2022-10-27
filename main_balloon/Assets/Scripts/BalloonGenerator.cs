@@ -20,6 +20,7 @@ public class BalloonGenerator : MonoBehaviour
     public GameObject paintBalloonPrefab;
     public GameObject marblesBalloonPrefab;
     public GameObject discoBalloonPrefab;
+    public GameObject deathstarPrefab;
 
     // Material options
     public Material redBalloonMat;
@@ -95,10 +96,15 @@ public class BalloonGenerator : MonoBehaviour
             if (explosion == "marbles")
             {
                 balloon = Instantiate(marblesBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), marblesBalloonPrefab.transform.rotation);
+                //balloon = Instantiate(deathstarPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), discoBalloonPrefab.transform.rotation);
             }
             if (explosion == "disco")
             {
                 balloon = Instantiate(discoBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), discoBalloonPrefab.transform.rotation);
+            }
+
+            if (explosion == "deathstar")
+            {
             }
 
             if (balloon != null)
