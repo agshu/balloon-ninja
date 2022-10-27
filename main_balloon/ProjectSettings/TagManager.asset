@@ -9,6 +9,9 @@ TagManager:
   - Light
   - Walls
   - Floor
+  - PaintResidue
+  - WaterResidue
+  - ConfettiResidue
   layers:
   - Default
   - TransparentFX
