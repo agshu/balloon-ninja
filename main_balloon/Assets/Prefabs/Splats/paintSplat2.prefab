@@ -69,7 +69,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b9190f7d5b347314db3cba3343e2efb5, type: 3}
       propertyPath: m_TagString
-      value: BalloonResidue
+      value: PaintResidue
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9190f7d5b347314db3cba3343e2efb5, type: 3}
