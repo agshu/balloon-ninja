@@ -19,7 +19,7 @@ public class ShrinkBall : MonoBehaviour
 
     private IEnumerator Shrink()
     {
-        Vector2 startScale = transform.localScale;
+        Vector3 startScale = transform.localScale;
         Vector3 minScale = new Vector3(minSize, minSize, minSize);
 
         do {
