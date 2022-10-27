@@ -1391,6 +1391,7 @@ MonoBehaviour:
   paintBalloonPrefab: {fileID: 2087820738930468262, guid: 92223e4c6e202f2428a9876b1409d2c4, type: 3}
   marblesBalloonPrefab: {fileID: 7365528425887067772, guid: 69de5f10baacf4450952ad8ae9e9d714, type: 3}
   discoBalloonPrefab: {fileID: 4526421655421469252, guid: 5af04ef8857be4631820f2a15c5bf623, type: 3}
+  deathstarPrefab: {fileID: 2642943400849146147, guid: d297953a1f1825047a61d33a4d0990c4, type: 3}
   redBalloonMat: {fileID: 2100000, guid: 5470c91a50534c84fbe33f0f407329a5, type: 2}
   blueBalloonMat: {fileID: 2100000, guid: a6a8cc7a042de084dbe4e6a1bb8a8653, type: 2}
   greenBalloonMat: {fileID: 2100000, guid: 3c5c4536c2b7a2b4d870da8a1b894f11, type: 2}
