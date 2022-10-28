@@ -20,7 +20,7 @@ public class lights : MonoBehaviour
         if(GameObject.Find("discoBall2(Clone)")){ // turns light of if disco ball is activated
             roomLight1.SetActive(false);
             roomLight2.SetActive(false);
-        } else if (GameObject.Find("DeathStarPrefab(Clone)")){ // turns light of if disco ball is activated
+        } else if (GameObject.Find("deathstarPrefab(Clone)")){ // turns light of if disco ball is activated
             roomLight1.SetActive(false);
             roomLight2.SetActive(false);
         } else if (GameObject.Find("DeathStarExplosion(Clone)")){ // turns light of if disco ball is activated

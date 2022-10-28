@@ -18,7 +18,7 @@ public class SilenceSound : MonoBehaviour
     {
         if(GameObject.Find("discoBall2(Clone)")){ // turns light of if disco ball is activated
             speaker.GetComponent<AudioSource>().Pause();
-        } else if (GameObject.Find("DeathStarPrefab(Clone)")){ // turns light of if disco ball is activated
+        } else if (GameObject.Find("deathstarPrefab(Clone)")){ // turns light of if disco ball is activated
             speaker.GetComponent<AudioSource>().Pause();
         }
         else {
