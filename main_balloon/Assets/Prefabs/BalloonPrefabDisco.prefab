@@ -121,12 +121,12 @@ MonoBehaviour:
   maxBalloonScale: 0.3
   height: 1.9
   DestroyTime: 2
+  DiscoTime: 5
   explosionPrefab: {fileID: 0}
   waterSplashPrefab: {fileID: 0}
   balloonRenderer: {fileID: 0}
   balls: {fileID: 0}
   discoBallPrefab: {fileID: 4097862737304719645, guid: aea21760b3fd4478eaf824b40b9fec60, type: 3}
-  deathstarPrefab: {fileID: 2642943400849146147, guid: d297953a1f1825047a61d33a4d0990c4, type: 3}
 --- !u!82 &5017566494716166998
 AudioSource:
   m_ObjectHideFlags: 0

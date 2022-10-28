@@ -13,9 +13,6 @@ TagManager:
   - WaterResidue
   - ConfettiResidue
   - Controller
-  - Light1
-  - Light2
-  - DeathStarExplosion
   layers:
   - Default
   - TransparentFX

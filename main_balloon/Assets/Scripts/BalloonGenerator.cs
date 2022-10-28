@@ -20,7 +20,7 @@ public class BalloonGenerator : MonoBehaviour
     public GameObject paintBalloonPrefab;
     public GameObject marblesBalloonPrefab;
     public GameObject discoBalloonPrefab;
-    public GameObject deathstarBalloonPrefab;
+    public GameObject deathstarPrefab;
 
     // Material options
     public Material redBalloonMat;
@@ -83,29 +83,28 @@ public class BalloonGenerator : MonoBehaviour
             GameObject balloon = null;
             if (explosion == "confetti")
             {
-                balloon = Instantiate(confettiBalloonPrefab, new Vector3(randomPos[0], 0.4f, randomPos[2]), confettiBalloonPrefab.transform.rotation);
+                balloon = Instantiate(confettiBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), confettiBalloonPrefab.transform.rotation);
             }
             if (explosion == "water")
             {
-                balloon = Instantiate(waterBalloonPrefab, new Vector3(randomPos[0], 0.4f, randomPos[2]), waterBalloonPrefab.transform.rotation);
+                balloon = Instantiate(waterBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), waterBalloonPrefab.transform.rotation);
             }
             if (explosion == "paint")
             {
-                balloon = Instantiate(paintBalloonPrefab, new Vector3(randomPos[0], 0.4f, randomPos[2]), paintBalloonPrefab.transform.rotation);
+                balloon = Instantiate(paintBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), paintBalloonPrefab.transform.rotation);
             }
             if (explosion == "marbles")
             {
-                balloon = Instantiate(marblesBalloonPrefab, new Vector3(randomPos[0], 0.4f, randomPos[2]), marblesBalloonPrefab.transform.rotation);
+                balloon = Instantiate(marblesBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), marblesBalloonPrefab.transform.rotation);
                 //balloon = Instantiate(deathstarPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), discoBalloonPrefab.transform.rotation);
             }
             if (explosion == "disco")
             {
-                balloon = Instantiate(discoBalloonPrefab, new Vector3(randomPos[0], 0.4f, randomPos[2]), discoBalloonPrefab.transform.rotation);
+                balloon = Instantiate(discoBalloonPrefab, new Vector3(randomPos[0], 0.1f, randomPos[2]), discoBalloonPrefab.transform.rotation);
             }
 
             if (explosion == "deathstar")
             {
-                balloon = Instantiate(deathstarBalloonPrefab, new Vector3(randomPos[0], 0.6f, randomPos[2]), deathstarBalloonPrefab.transform.rotation);
             }
 
             if (balloon != null)
