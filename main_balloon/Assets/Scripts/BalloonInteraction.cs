@@ -20,6 +20,7 @@ public class BalloonInteraction : MonoBehaviour
     private AudioSource balloonPopAudio;
     public GameObject balls;
     public GameObject discoBallPrefab;
+    public GameObject deathstarPrefab;
 
     Vector3 setHeight;
     Vector3 heightVector;
@@ -102,10 +103,20 @@ public class BalloonInteraction : MonoBehaviour
                 DiscoBalloon();
             }
 
+            if (gameObject.name == "BalloonPrefabDeathStar(Clone)")
+            {
+                DeathStarSpawn();
+            }
+
         }
-        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall" || other.gameObject.name == "Body" || other.gameObject.name == "Handle" || other.gameObject.name == "Blade" ) 
+        if ( other.gameObject.name == "Wall" || other.gameObject.name == "Body") 
         {
             MoveBalloon(forceDir, bPos);
+        }
+
+        if (other.gameObject.name == "Glove" || other.gameObject.name == "Handle" || other.gameObject.name == "Blade" ) 
+        {
+            HitBalloon(bPos);
         }
     }
 
@@ -124,6 +135,12 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(discoBall, 5.5f);
     }
 
+    private void DeathStarSpawn()
+    {
+        GameObject deathStar = Instantiate(deathstarPrefab, new Vector3(-4f, 1.5f, 0), deathstarPrefab.transform.rotation);
+        Destroy(gameObject);
+    }
+
 
     private void PopBalloonWater(Vector3 bPos)
     {
@@ -133,15 +150,23 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(explosion, DestroyTime);
         Destroy(splashExplosion, DestroyTime);
         balloonRenderer.enabled = false;
-        Destroy(gameObject, balloonPopAudio.clip.length);
+        Destroy(gameObject);
     }
 
     private void MoveBalloon(Vector3 newDir, Vector3 bPos)
     {
-        setPush = new Vector3(newDir.x, height-bPos.y, 0); // sets a new direction after collision. height-bPos to never be above the ceiling
+        setPush = new Vector3(newDir.x, height-bPos.y, newDir.z); // sets a new direction after collision. height-bPos to never be above the ceiling
         heightVector = transform.position + setPush;
         //rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
-        rb.AddForce(newDir*controllerVelocity.Velocity.x);
+        rb.AddForce(newDir*(controllerVelocity.Velocity.x + controllerVelocity.Velocity.y + controllerVelocity.Velocity.z) *100);
+    }
+
+    private void HitBalloon(Vector3 bPos)
+    {
+        setPush = new Vector3(controllerVelocity.Velocity.x, height-bPos.y, controllerVelocity.Velocity.z); // sets a new direction after collision. height-bPos to never be above the ceiling
+        heightVector = transform.position + setPush;
+        //rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
+        rb.AddForce(controllerVelocity.Velocity*20);
     }
 
     public void explode(Vector3 SwordDir) 
