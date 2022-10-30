@@ -13,7 +13,13 @@ TagManager:
   - WaterResidue
   - ConfettiResidue
   - Controller
+<<<<<<< HEAD
   - magnet
+=======
+  - Light1
+  - Light2
+  - DeathStarExplosion
+>>>>>>> 95d4615f29fc4ebfad8302f755a1e04e4dda8112
   layers:
   - Default
   - TransparentFX
