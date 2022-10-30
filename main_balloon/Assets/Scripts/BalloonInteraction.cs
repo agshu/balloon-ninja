@@ -20,12 +20,13 @@ public class BalloonInteraction : MonoBehaviour
     private AudioSource balloonPopAudio;
     public GameObject balls;
     public GameObject discoBallPrefab;
+    public GameObject magnet;
 
     Vector3 setHeight;
     Vector3 heightVector;
     Vector3 dirVec;
-    Vector3 setPush;
-    Vector3 pushVector;
+    Vector3 newDirPoint;
+    Vector3 magnetPos;
 
     private float cubeSize = 0.1f;
     private int cubesInRow = 2;
@@ -50,7 +51,6 @@ public class BalloonInteraction : MonoBehaviour
 
         setHeight = new Vector3(0, height, 0); 
         heightVector = transform.position + setHeight; //punkt som ballongerna dras till rakt ovanför sig
-
     }
 
     void FixedUpdate()
@@ -70,7 +70,7 @@ public class BalloonInteraction : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         Vector3 bPos = transform.position; 
         Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
-        Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest sword point
+        Vector3 forceDir = (bPos - cPos).normalized; //normalized vector between balloon and closest hit point
 
         if (other.gameObject.name == "Sharp" || other.gameObject.name == "spikes" ) 
         {
@@ -103,9 +103,20 @@ public class BalloonInteraction : MonoBehaviour
             }
 
         }
-        if (other.gameObject.name == "Glove" || other.gameObject.name == "Wall" || other.gameObject.name == "Body" || other.gameObject.name == "Handle" || other.gameObject.name == "Blade" ) 
+
+        if (other.gameObject.name == "Wall" || other.gameObject.name == "Body" || other.gameObject.name == "Glove" ) 
         {
             MoveBalloon(forceDir, bPos);
+        }
+
+        if (other.gameObject.name == "Handle" || other.gameObject.name == "Blade" )
+        {
+            HitBalloon(bPos);
+        }
+
+        if (other.gameObject.name == "MagnetHitBox")
+        {
+            DrawBalloonBack(bPos);
         }
     }
 
@@ -124,7 +135,6 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(discoBall, 5.5f);
     }
 
-
     private void PopBalloonWater(Vector3 bPos)
     {
         GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position, explosionPrefab.transform.rotation);
@@ -136,12 +146,28 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
-    private void MoveBalloon(Vector3 newDir, Vector3 bPos)
+    private void MoveBalloon(Vector3 newDir, Vector3 bPos) 
     {
-        setPush = new Vector3(newDir.x, height-bPos.y, 0); // sets a new direction after collision. height-bPos to never be above the ceiling
-        heightVector = transform.position + setPush;
-        //rb.AddForce(newDir*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
-        rb.AddForce(newDir*controllerVelocity.Velocity.x);
+        newDirPoint = new Vector3(newDir.x, height-bPos.y, newDir.z); // sets a new direction after collision. height-bPos to never be above the ceiling
+        heightVector = transform.position + newDirPoint;
+        rb.AddForce(newDirPoint*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
+    }
+
+    private void HitBalloon(Vector3 bPos)
+    {
+        newDirPoint = new Vector3(controllerVelocity.Velocity.x, height-bPos.y, controllerVelocity.Velocity.z); // sets a new direction after collision. height-bPos to never be above the ceiling
+        heightVector = transform.position + newDirPoint;
+        rb.AddForce(controllerVelocity.Velocity*20); //AddForce is a Vec3
+    }
+
+    private void DrawBalloonBack(Vector3 bPos)  // with magnet
+    {
+        magnet = GameObject.FindWithTag("magnet");
+        magnetPos = magnet.transform.position;
+        Vector3 dir = (magnetPos - bPos).normalized;
+        newDirPoint = new Vector3(dir.x, height-bPos.y, dir.z);
+        heightVector = transform.position/2 + newDirPoint;
+        rb.AddForce(newDirPoint*70f);
     }
 
     public void explode(Vector3 SwordDir) 
@@ -150,9 +176,6 @@ public class BalloonInteraction : MonoBehaviour
         cubesPivotDistance = cubeSize * cubesInRow / 2;
         //use this value to create pivot vector
         cubesPivot = new Vector3(cubesPivotDistance, cubesPivotDistance, cubesPivotDistance);
-
-        //make object disappear
-        //gameObject.SetActive(false);
 
         //loop 3 times to create 5x5x5 pieces in x,y,z coordinates
         for (int x = 0; x < cubesInRow; x++) {
@@ -181,7 +204,6 @@ public class BalloonInteraction : MonoBehaviour
         Rigidbody body = piece.AddComponent<Rigidbody>();
         body.mass = cubeSize;
         body.AddForce(SwordDir*50f+ Random.onUnitSphere * 25.0f);
-
     }
 
 
