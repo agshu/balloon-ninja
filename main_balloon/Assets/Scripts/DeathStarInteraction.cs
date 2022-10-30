@@ -41,7 +41,7 @@ public class DeathStarInteraction : MonoBehaviour
 
         balloonRenderer = GetComponent<Renderer>();
 
-        balloonRenderer.enabled = true;
+        //balloonRenderer.enabled = true;
 
        // rb = GetComponent<Rigidbody>(); //hämtar ballongens rigidbody
 

@@ -102,7 +102,6 @@ public class BalloonInteraction : MonoBehaviour
             {
                 DiscoBalloon();
             }
-
             if (gameObject.name == "BalloonPrefabDeathStar(Clone)")
             {
                 DeathStarSpawn();
@@ -114,12 +113,7 @@ public class BalloonInteraction : MonoBehaviour
             MoveBalloon(forceDir, bPos);
         }
 
-        if (other.gameObject.name == "Glove" || other.gameObject.name == "Handle" || other.gameObject.name == "Blade" ) 
-        {
-            HitBalloon(bPos);
-        }
-
-        if (other.gameObject.name == "Handle" || other.gameObject.name == "Blade" )
+        if (other.gameObject.name == "Glove" || other.gameObject.name == "Handle" || other.gameObject.name == "Blade" || other.gameObject.name == "pot" || other.gameObject.name == "cactusbody" ) 
         {
             HitBalloon(bPos);
         }
@@ -166,7 +160,7 @@ public class BalloonInteraction : MonoBehaviour
     {
         newDirPoint = new Vector3(newDir.x, height-bPos.y, newDir.z); // sets a new direction after collision. height-bPos to never be above the ceiling
         heightVector = transform.position + newDirPoint;
-        rb.AddForce(newDirPoint*50f); //50 bör senare ändras till vilken kraft ballongen slås med 
+        rb.AddForce(newDirPoint*50f);
     }
 
     private void HitBalloon(Vector3 bPos)
@@ -178,7 +172,7 @@ public class BalloonInteraction : MonoBehaviour
 
     private void DrawBalloonBack(Vector3 bPos)  // with magnet
     {
-        magnet = GameObject.FindWithTag("magnet");
+        magnet = GameObject.FindWithTag("Magnet");
         magnetPos = magnet.transform.position;
         Vector3 dir = (magnetPos - bPos).normalized;
         newDirPoint = new Vector3(dir.x, height-bPos.y, dir.z);
