@@ -11,6 +11,7 @@ public class SwitchWeapRight : MonoBehaviour
     public GameObject glove;
     public GameObject cactus;
     public GameObject sword;
+    public GameObject magnet;
     private void Awake() 
     {
         toggleReference.action.started += Toggle;
@@ -20,6 +21,7 @@ public class SwitchWeapRight : MonoBehaviour
     {
         cactus.SetActive(false);
         glove.SetActive(false);
+        magnet.SetActive(false);
     }
 
     private void OnDestroy() 
@@ -38,6 +40,9 @@ public class SwitchWeapRight : MonoBehaviour
             sword.SetActive(true);
         } else if (sword.activeSelf == true) {
             sword.SetActive(false);
+            magnet.SetActive(true);
+        } else if (magnet.activeSelf == true) {
+            magnet.SetActive(false);
             glove.SetActive(true);
         }
     }

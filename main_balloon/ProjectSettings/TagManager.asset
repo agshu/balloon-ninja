@@ -5,6 +5,18 @@ TagManager:
   serializedVersion: 2
   tags:
   - Magnet
+  - Balloon
+  - BalloonResidue
+  - Controller
+  - Floor
+  - Light1
+  - Light2
+  - Walls
+  - PaintResidue
+  - WaterResidue
+  - ConfettiResidue
+  - ControllerRight
+  - ControllerLeft
   layers:
   - Default
   - TransparentFX

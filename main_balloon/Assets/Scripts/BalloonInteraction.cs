@@ -36,13 +36,18 @@ public class BalloonInteraction : MonoBehaviour
     Vector3 cubesPivot;
 
     //controller velocity
-    private ControllerVelocity controllerVelocity;
-    public GameObject controller; 
+    private ControllerVelocity controllerVelocityRight;
+    public GameObject controllerRight; 
+
+    public GameObject controllerLeft;
+    private ControllerVelocity controllerVelocityLeft;
 
     void Start()
     {   
-        controller = GameObject.FindWithTag("Controller");
-        controllerVelocity = controller.GetComponent<ControllerVelocity>();
+        controllerRight = GameObject.FindWithTag("ControllerRight");
+        controllerLeft = GameObject.FindWithTag("ControllerLeft");
+        controllerVelocityRight = controllerRight.GetComponent<ControllerVelocity>();
+        controllerVelocityLeft = controllerLeft.GetComponent<ControllerVelocity>();
 
         balloonRenderer = GetComponent<Renderer>();
 
@@ -108,14 +113,19 @@ public class BalloonInteraction : MonoBehaviour
             }
 
         }
-        if ( other.gameObject.name == "Wall" || other.gameObject.name == "Body") 
+        if ( other.gameObject.name == "Wall" || other.gameObject.name == "Body" || other.gameObject.name == "magnet") 
         {
             MoveBalloon(forceDir, bPos);
         }
 
-        if (other.gameObject.name == "Glove" || other.gameObject.name == "Handle" || other.gameObject.name == "Blade" || other.gameObject.name == "pot" || other.gameObject.name == "cactusbody" ) 
+        if (other.gameObject.name == "GloveLeft" || other.gameObject.name == "HandleLeft" || other.gameObject.name == "BladeLeft" || other.gameObject.name == "potLeft" || other.gameObject.name == "cactusbodyLeft" ) 
         {
-            HitBalloon(bPos);
+            HitBalloon(bPos, controllerVelocityLeft);
+        }
+
+        if (other.gameObject.name == "GloveRight" || other.gameObject.name == "HandleRight" || other.gameObject.name == "BladeRight" || other.gameObject.name == "potRight" || other.gameObject.name == "cactusbodyRight" ) 
+        {
+            HitBalloon(bPos, controllerVelocityRight);
         }
 
         if (other.gameObject.name == "MagnetHitBox")
@@ -153,7 +163,7 @@ public class BalloonInteraction : MonoBehaviour
         Destroy(explosion, DestroyTime);
         Destroy(splashExplosion, DestroyTime);
         balloonRenderer.enabled = false;
-        Destroy(gameObject);
+        Destroy(gameObject, balloonPopAudio.clip.length);
     }
 
     private void MoveBalloon(Vector3 newDir, Vector3 bPos) 
@@ -163,11 +173,11 @@ public class BalloonInteraction : MonoBehaviour
         rb.AddForce(newDirPoint*50f);
     }
 
-    private void HitBalloon(Vector3 bPos)
+    private void HitBalloon(Vector3 bPos, ControllerVelocity controllerVelocity)
     {
         newDirPoint = new Vector3(controllerVelocity.Velocity.x, height-bPos.y, controllerVelocity.Velocity.z); // sets a new direction after collision. height-bPos to never be above the ceiling
         heightVector = transform.position + newDirPoint;
-        rb.AddForce(controllerVelocity.Velocity*20); //AddForce is a Vec3
+        rb.AddForce(controllerVelocity.Velocity*20 + new Vector3(5,5,5)); //AddForce is a Vec3
     }
 
     private void DrawBalloonBack(Vector3 bPos)  // with magnet
@@ -177,7 +187,7 @@ public class BalloonInteraction : MonoBehaviour
         Vector3 dir = (magnetPos - bPos).normalized;
         newDirPoint = new Vector3(dir.x, height-bPos.y, dir.z);
         heightVector = transform.position/2 + newDirPoint;
-        rb.AddForce(newDirPoint*70f);
+        rb.AddForce(newDirPoint*15f);
     }
 
     public void explode(Vector3 SwordDir) 

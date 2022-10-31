@@ -1181,18 +1181,7 @@
                 {
                     "name": "",
                     "id": "f0bb3d72-444a-4c97-8128-c4a32192781f",
-                    "path": "<OculusTouchController>/deviceVelocity",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "RightVelocity",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "739e87b8-0fb2-4b35-898e-0f47258fde7d",
-                    "path": "",
+                    "path": "<XRController>{RightHand}/deviceVelocity",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

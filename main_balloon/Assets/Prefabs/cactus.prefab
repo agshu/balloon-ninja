@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 5717102028882256424}
   - component: {fileID: 1790164096402715138}
   - component: {fileID: 884847135457950068}
+  - component: {fileID: 5963282476531885484}
   m_Layer: 0
   m_Name: pot
   m_TagString: Untagged
@@ -415,6 +416,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!136 &5963282476531885484
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451091209581018259}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 1.2883469
+  m_Height: 2.5766933
+  m_Direction: 1
+  m_Center: {x: -0.0000009536743, y: 0, z: 0.7766305}
 --- !u!1 &3782171348133128504
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,6 +629,7 @@ GameObject:
   - component: {fileID: 1059939364267882355}
   - component: {fileID: 4103603968900226960}
   - component: {fileID: 6146150685093746564}
+  - component: {fileID: 1362530739792517218}
   m_Layer: 0
   m_Name: cactusbody
   m_TagString: Untagged
@@ -686,6 +702,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1362530739792517218
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404003173043703103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3244725185010598430, guid: e93c39cff4ead4db7b08e6eee9ce8c04, type: 3}
 --- !u!1 &6512033593052551669
 GameObject:
   m_ObjectHideFlags: 0

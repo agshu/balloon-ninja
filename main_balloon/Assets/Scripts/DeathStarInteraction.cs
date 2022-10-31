@@ -65,11 +65,13 @@ public class DeathStarInteraction : MonoBehaviour
 
 
     private void OnTriggerEnter(Collider other) {
-        Vector3 bPos = transform.position; 
-        Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
-        this.GetComponent<CapsuleCollider>().enabled=false;
-        GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position + new Vector3(0, -1, 0), explosionPrefab.transform.rotation);
-        Destroy(gameObject);
+         if (other.gameObject.name != "MagnetHitBox" ) {
+            Vector3 bPos = transform.position; 
+            Vector3 cPos = other.ClosestPoint(bPos); //closest point from the collider object
+            this.GetComponent<CapsuleCollider>().enabled=false;
+            GameObject explosion = Instantiate(explosionPrefab, gameObject.transform.position + new Vector3(0, -1, 0), explosionPrefab.transform.rotation);
+            Destroy(gameObject);
+         }
 
     }
 
