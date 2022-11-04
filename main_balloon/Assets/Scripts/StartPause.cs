@@ -22,11 +22,6 @@ public class StartPause : MonoBehaviour
 
     private void Toggle(InputAction.CallbackContext context) 
     {
-        if(SceneManager.GetActiveScene().name == "AmandaTest") {
-            SceneManager.LoadScene("StartScene");
-        }
-        else {
             SceneManager.LoadScene("AmandaTest");
-        }
     }
 }

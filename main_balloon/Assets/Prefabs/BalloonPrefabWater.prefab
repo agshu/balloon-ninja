@@ -120,14 +120,17 @@ MonoBehaviour:
   force: 1
   inflationRate: 1.1
   maxBalloonScale: 0.3
-  height: 1.9
+  height: 1.3
   DestroyTime: 2
-  DiscoTime: 5
   explosionPrefab: {fileID: 8116430382636961811, guid: c6c087879b0d3488bb5ce74333349e7d, type: 3}
   waterSplashPrefab: {fileID: 3519414162747372840, guid: 77ab3e9bb005d43ec860f95e40333a50, type: 3}
   balloonRenderer: {fileID: 0}
   balls: {fileID: 0}
   discoBallPrefab: {fileID: 0}
+  deathstarPrefab: {fileID: 0}
+  magnet: {fileID: 0}
+  controllerRight: {fileID: 0}
+  controllerLeft: {fileID: 0}
 --- !u!82 &-1066579951292746438
 AudioSource:
   m_ObjectHideFlags: 0

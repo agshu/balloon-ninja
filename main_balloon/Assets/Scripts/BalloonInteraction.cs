@@ -12,7 +12,7 @@ public class BalloonInteraction : MonoBehaviour
     public float force = 1;
     public float inflationRate = 1.1f;
     public float maxBalloonScale = 0.3f;
-    public float height = 0.8f;
+    public float height = 0.3f;
     public float DestroyTime = 1f;
     public GameObject explosionPrefab;
     public GameObject waterSplashPrefab;
@@ -186,7 +186,7 @@ public class BalloonInteraction : MonoBehaviour
         magnetPos = magnet.transform.position;
         Vector3 dir = (magnetPos - bPos).normalized;
         newDirPoint = new Vector3(dir.x, height-bPos.y, dir.z);
-        heightVector = transform.position/2 + newDirPoint;
+        heightVector = transform.position + newDirPoint;
         rb.AddForce(newDirPoint*15f);
     }
 

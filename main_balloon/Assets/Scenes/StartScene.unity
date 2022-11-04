@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 1, g: 1, b: 1, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 8b7dd0809c7c6498789fa32a61eaa6cb, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 20d4f77b9022eab48b4d94599ed4bf82, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -754,9 +754,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5768a0bc6f076d47ae9e1687726584e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balloonPrefabs: []
   spawnTime: 3
   maxNumBalloons: 30
+  confettiBalloonPrefab: {fileID: 0}
+  waterBalloonPrefab: {fileID: 0}
+  paintBalloonPrefab: {fileID: 0}
+  marblesBalloonPrefab: {fileID: 0}
+  discoBalloonPrefab: {fileID: 0}
+  deathstarBalloonPrefab: {fileID: 0}
+  redBalloonMat: {fileID: 0}
+  blueBalloonMat: {fileID: 0}
+  greenBalloonMat: {fileID: 0}
+  pinkBalloonMat: {fileID: 0}
 --- !u!64 &892841745
 MeshCollider:
   m_ObjectHideFlags: 0
