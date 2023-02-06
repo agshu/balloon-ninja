@@ -13,6 +13,8 @@ public class BalloonGenerator : MonoBehaviour
     public int maxNumBalloons = 30;
     private GameObject[] spawnedBalloons;
     private string[] messageArray;
+    private static List<string> colors = new List<string>() { "red", "blue", "green", "pink" };
+    private static List<string> explosions = new List<string>() { "confetti", "water", "paint", "marbles", "disco", "deathstar"};
 
     // Balloon options
     public GameObject confettiBalloonPrefab;
@@ -32,6 +34,7 @@ public class BalloonGenerator : MonoBehaviour
 
     void Start()
     {
+        InvokeRepeating("BalloonSpawn", spawnTime, spawnTime);
         ws = new WebSocket("ws://partypoppervr.herokuapp.com/");
 
         ws.Connect();
@@ -39,6 +42,7 @@ public class BalloonGenerator : MonoBehaviour
         if (ws == null)
         {
             UnityEngine.Debug.Log("Not connected");
+
             return;
         }
         else
@@ -67,13 +71,19 @@ public class BalloonGenerator : MonoBehaviour
     {
         messageArray = message.Split(",");
         UnityEngine.Debug.Log("Color: " + messageArray[0] + ", Explosion: " + messageArray[1] + ", Sound: " + messageArray[2]);
-        BalloonSpawn(messageArray[0], messageArray[1]);
+       // BalloonSpawn(messageArray[0], messageArray[1]);
+       // enable this is server is live
     }
 
 
-    void BalloonSpawn(string color, string explosion)
+    void BalloonSpawn() // add parameters string color and string explosion if live
     {
         // GameObject balloonPrefab = balloonPrefabs[UnityEngine.Random.Range(0, balloonPrefabs.Length)];
+        int randomIndex = UnityEngine.Random.Range(0, colors.Count);
+        int randomExpIndex = UnityEngine.Random.Range(0, explosions.Count);
+       //  UnityEngine.Debug.Log(colors[randomIndex]);
+        string color = colors[randomIndex]; // remove if live
+        string explosion = explosions[randomExpIndex]; // remove if live
 
         spawnedBalloons = GameObject.FindGameObjectsWithTag("Balloon");
         UnityEngine.Debug.Log("Number of active balloons: " + (spawnedBalloons.Length + 1).ToString());
